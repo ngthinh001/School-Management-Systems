@@ -1,4 +1,4 @@
-<?php include 'gv/gvcn.php' ?>
+<?php include '../gv/gvbm.php' ?>
 <br>
 <div class="text-center">
     <div class="container">
@@ -38,4 +38,4 @@
 </div>
 
 
-<?php include 'gv/footer.php' ?>
+<?php include '../gv/footer.php' ?>

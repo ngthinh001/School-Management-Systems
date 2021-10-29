@@ -1,4 +1,4 @@
-<?php include 'gv/gvcn.php' ?>
+<?php include '../gv/gvcn.php' ?>
 <div class="text-center">
     <div class="container">
         <h1><b>Danh sách học sinh trong lớp</b></h1>
@@ -25,4 +25,4 @@
     </table>
 </div>
 <a href="#" class="btn btn-success">Cập nhật danh sách</a>
-<?php include 'gv/footer.php' ?>
+<?php include '../gv/footer.php' ?>

@@ -1,4 +1,4 @@
-<?php include 'gv/gvcn.php' ?>
+<?php include '../gv/gvbm.php' ?>
 <div class="text-center">
     <div class="container">
         <h1><b>Lịch giảng dạy</b></h1>
@@ -29,4 +29,4 @@
     </table>
 </div>
 <a href="#" class="btn btn-success">Cập nhật lịch</a>
-<?php include 'gv/footer.php' ?>
+<?php include '../gv/footer.php' ?>

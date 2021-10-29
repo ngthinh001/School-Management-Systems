@@ -183,3 +183,7 @@ a {
     }
 }
 
+tr.spaceUnder>td {
+    padding-bottom: 5%;
+    padding-right: 2%;
+  }

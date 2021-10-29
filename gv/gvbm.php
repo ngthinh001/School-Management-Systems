@@ -23,25 +23,19 @@
         <nav class="nav">
             <div> <a href="#" class="nav_logo"> <i class="bi bi-stack nav_logo-icon"></i> <span class="nav_logo-name">High School</span> </a>
                 <div class="nav_list">
-                    <a href="../gvcn/index.php" class="nav_link active">
+                    <a href="../gvbm/index.php" class="nav_link active">
                         <i class='bi bi-house-door nav_logo-icon'></i>
                         <span class="nav_name">Trang chủ</span> </a>
-                    <a href="../gvcn/thongtin.php" class="nav_link">
+                    <a href="../gvbm/thongtin.php" class="nav_link">
                         <i class='bi bi-person-lines-fill nav_logo-icon'></i>
                         <span class="nav_name">Thông tin Giáo Viên</span> </a>
-                    <a href="../gvcn/diem.php" class="nav_link">
+                    <a href="../gvbm/diem.php" class="nav_link">
                         <i class='bi bi-upload nav_logo-icon'></i>
                         <span class="nav_name">Cập nhật điểm của học sinh</span> </a>
-                    <a href="../gvcn/lichday.php" class="nav_link">
+                    <a href="../gvbm/lichday.php" class="nav_link">
                         <i class='bi bi-calendar3 nav_logo-icon'></i>
                         <span class="nav_name">Lịch giảng dạy</span> </a>
-                    <a href="../gvcn/dshs.php" class="nav_link">
-                        <i class='bi bi-menu-button nav_logo-icon'></i>
-                        <span class="nav_name">Danh sách học sinh trong lớp</span> </a>
-                    <a href="../gvcn/dsgv.php" class="nav_link">
-                        <i class='bi bi-people nav_logo-icon'></i>
-                        <span class="nav_name">Danh sách giáo viên dạy lớp</span> </a>
-                    <a href="../gvcn/chat.php" class="nav_link">
+                    <a href="../gvbm/chat.php" class="nav_link">
                         <i class='bi bi-messenger nav_logo-icon'></i>
                         <span class="nav_name">Chat</span> </a>
                 </div>
