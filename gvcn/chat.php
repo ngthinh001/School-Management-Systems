@@ -1,5 +1,5 @@
 <?php include '../gv/gvcn.php' ?>
-
+<br>
 <div class="main-chat">
 </div><!-- div.main-chat -->
 <div class="box-chat">

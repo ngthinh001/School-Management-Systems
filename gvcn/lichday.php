@@ -1,4 +1,5 @@
 <?php include '../gv/gvcn.php' ?>
+<br>
 <div class="text-center">
     <div class="container">
         <h1><b>Lịch giảng dạy</b></h1>
@@ -14,7 +15,7 @@
                 <th scope="col">Môn học</th>
                 <th scope="col">Lớp</th>
                 <th scope="col">Tiết</th>
-                <th scope="col">Ngày-giờ</th>
+                <th scope="col">Ngày</th>
             </tr>
         </thead>
         <tbody>

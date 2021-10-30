@@ -1,4 +1,5 @@
 <?php include '../gv/gvcn.php' ?>
+<br>
 <div class="text-center">
     <div class="container">
         <h1><b>Danh sách học sinh trong lớp</b></h1>

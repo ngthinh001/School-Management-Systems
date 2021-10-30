@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     
     // Your code to run since DOM is loaded and ready
     });
-
+/*
 // Hàm gửi tin nhắn
 function sendMsg() {
     // Khai ba1oca1c biến trong form
@@ -69,4 +69,18 @@ $('#formSendMsg input[type="text"]').keypress(function () {
 $('#formSendMsg input[type="text"]').click(function (e) {
     // Kéo hết thanh cuộn trình duyệt đến cuối
     window.scrollBy(0, $(document).height());
+});*/
+
+
+
+// click ra element khac
+$(document).on("click", function() {
+    $(".menu").hide();
 });
+// click vao element profile
+$(document).ready(function() {
+    $(".header_img").on("click", function(event) {
+        event.stopPropagation();
+        $(".menu").slideToggle("fast");
+    });
+})

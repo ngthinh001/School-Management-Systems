@@ -19,6 +19,18 @@
         <div class="header_toggle"> <i class='bi bi-list' id="header-toggle"></i> </div>
         <div class="header_img"> <img src="https://w7.pngwing.com/pngs/518/320/png-transparent-computer-icons-mobile-app-development-android-my-account-icon-blue-text-logo.png" alt="avatar"> </div>
     </header>
+
+    <div class="action">
+        <div class="menu" id="image">
+            <h3>Nguyễn Đức Thịnh <br><span>Admin</span> </h3>
+            <ul>
+                <il><i class="bi bi-person-lines-fill"></i>&nbsp;&nbsp;<a class="menu_icon" href="">Hồ sơ <br></a></il>
+                <il><i class="fas fa-unlock-alt"></i>&nbsp;&nbsp;<a class="menu_icon" href="">Đổi mật khẩu</a><br></il>
+                <il><i class="bi bi-box-arrow-in-right"></i>&nbsp;&nbsp;<a class="menu_icon" href="">Đăng xuất</a></il>
+            </ul>
+        </div>
+    </div>
+
     <div class="l-navbar" id="nav-bar">
         <nav class="nav">
             <div> <a href="#" class="nav_logo"> <i class="bi bi-stack nav_logo-icon"></i> <span class="nav_logo-name">High School</span> </a>

@@ -6,7 +6,7 @@
         <br><br>
     </div>
 </div>
-<div class="container">
+<div class="mid">
 <table>
         <tr class="spaceUnder">
             <td><i class="bi bi-person-circle"></i> Họ và tên:</td>
@@ -14,7 +14,7 @@
         </tr>
         <tr class="spaceUnder">
             <td><i class="bi bi-telephone"></i> Số điện thoại:</td>
-            <td><input type="number" name="sdt"></td>
+            <td><input type="text" name="sdt"></td>
         </tr>
         <tr class="spaceUnder">
             <td><i class="bi bi-calendar-week"></i>Ngày sinh: </td>
