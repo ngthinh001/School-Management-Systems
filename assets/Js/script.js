@@ -50,4 +50,5 @@ $(document).ready(function() {
         event.stopPropagation();
         $(".menu").slideToggle("fast");
     });
+
 })

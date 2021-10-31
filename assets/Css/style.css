@@ -179,6 +179,9 @@ a {
 }
 
 
+/* User Account DropdownMenu */
+
+
 /* Width<=768 */
 
 @media screen and (max-width: 768px) {
@@ -259,3 +262,80 @@ a {
     font-weight: 500;
     transition: 0.5%;
 }
+
+
+/* /User Account DropdownMenu */
+
+
+/* Dashbroad Page  */
+
+.n01 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.n01 .box {
+    position: relative;
+    width: 300px;
+    padding: 40px;
+    background: #4834d4;
+    box-shadow: 0 25px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    margin: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.n01 .box .icon {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    color: #fff;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    border-radius: 50%;
+    font-size: 40px;
+    font-weight: 700;
+    transition: 0.5s;
+}
+
+.n01 .box:nth-child(1) .icon {
+    box-shadow: 0 0 0 0 #dff9fb;
+    background: #4834d4;
+}
+
+.n01 .box:nth-child(1):hover .icon {
+    box-shadow: 0 0 0 180px #fff;
+}
+
+.n01 .box .content {
+    position: relative;
+    z-index: 1;
+    transition: 0.5s;
+}
+
+.n01 .box:hover .content {
+    color: #fff;
+}
+
+.n01 .box span {
+    padding: 10px 20px;
+    background: #4834d4;
+    border-radius: 6px;
+    color: #dff9fb;
+    font-weight: 300;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .2);
+}
+
+.n01 .box:hover span {
+    color: white;
+}
+
+
+/* /Dashbroad Page */
