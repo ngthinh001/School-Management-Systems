@@ -150,10 +150,6 @@ tr.spaceUnder>td {
     padding-bottom: 5%;
 }
 
-.mid{
-    padding: 0 33%;
-}
-
 .end{
         width: 100%;
         height: var(--header-height);

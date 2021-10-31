@@ -1,3 +1,5 @@
+<?php include '../sql/connect.php' ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,6 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
 </head>
@@ -22,11 +25,11 @@
 
     <div class="action">
         <div class="menu" id="image">
-            <h3>Nguyễn Đức Thịnh <br><span>Admin</span> </h3>
+            <h3>Nguyễn Đức Thịnh <br><span>Giáo viên bộ môn</span> </h3>
             <ul>
-                <il><i class="bi bi-person-lines-fill"></i>&nbsp;&nbsp;<a class="menu_icon" href="">Hồ sơ <br></a></il>
+                <il><i class="bi bi-person-lines-fill"></i>&nbsp;&nbsp;<a class="menu_icon" href="../gvbm/thongtin.php">Hồ sơ <br></a></il>
                 <il><i class="fas fa-unlock-alt"></i>&nbsp;&nbsp;<a class="menu_icon" href="">Đổi mật khẩu</a><br></il>
-                <il><i class="bi bi-box-arrow-in-right"></i>&nbsp;&nbsp;<a class="menu_icon" href="">Đăng xuất</a></il>
+                <il><i class="bi bi-box-arrow-in-right"></i>&nbsp;&nbsp;<a class="menu_icon" href="../logout.php">Đăng xuất</a></il>
             </ul>
         </div>
     </div>
@@ -38,10 +41,8 @@
                     <a href="../gvbm/index.php" class="nav_link active">
                         <i class='bi bi-house-door nav_logo-icon'></i>
                         <span class="nav_name">Trang chủ</span> </a>
-                    <a href="../gvbm/thongtin.php" class="nav_link">
-                        <i class='bi bi-person-lines-fill nav_logo-icon'></i>
-                        <span class="nav_name">Thông tin Giáo Viên</span> </a>
-                    <a href="../gvbm/diem.php" class="nav_link">
+
+                        <a href="../gvbm/diem.php" class="nav_link">
                         <i class='bi bi-upload nav_logo-icon'></i>
                         <span class="nav_name">Cập nhật điểm của học sinh</span> </a>
                     <a href="../gvbm/lichday.php" class="nav_link">

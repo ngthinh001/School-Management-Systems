@@ -1,3 +1,14 @@
+<?php session_start(); ?>
+<?php
+if (!isset($_SESSION['username']) && !$_SESSION['level'] == 2) {
+    header('Location: login.php');
+} else if ($_SESSION['level'] == 3) {
+    header('Location: ../gvbm/index.php');
+}
+?>
+
+<?php include '../sql/connect.php' ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,11 +34,11 @@
 
     <div class="action">
         <div class="menu" id="image">
-            <h3>Nguyễn Đức Thịnh <br><span>Admin</span> </h3>
+            <h3>Nguyễn Đức Thịnh <br><span>Giáo viên chủ nhiệm/ bộ môn</span> </h3>
             <ul>
-                <il><i class="bi bi-person-lines-fill"></i>&nbsp;&nbsp;<a class="menu_icon" href="">Hồ sơ <br></a></il>
+                <il><i class="bi bi-person-lines-fill"></i>&nbsp;&nbsp;<a class="menu_icon" href="../gvcn/thongtin.php">Hồ sơ <br></a></il>
                 <il><i class="fas fa-unlock-alt"></i>&nbsp;&nbsp;<a class="menu_icon" href="">Đổi mật khẩu</a><br></il>
-                <il><i class="bi bi-box-arrow-in-right"></i>&nbsp;&nbsp;<a class="menu_icon" href="">Đăng xuất</a></il>
+                <il><i class="bi bi-box-arrow-in-right"></i>&nbsp;&nbsp;<a class="menu_icon" href="../logout.php">Đăng xuất</a></il>
             </ul>
         </div>
     </div>
@@ -39,9 +50,6 @@
                     <a href="../gvcn/index.php" class="nav_link active">
                         <i class='bi bi-house-door nav_logo-icon'></i>
                         <span class="nav_name">Trang chủ</span> </a>
-                    <a href="../gvcn/thongtin.php" class="nav_link">
-                        <i class='bi bi-person-lines-fill nav_logo-icon'></i>
-                        <span class="nav_name">Thông tin Giáo Viên</span> </a>
                     <a href="../gvcn/diem.php" class="nav_link">
                         <i class='bi bi-upload nav_logo-icon'></i>
                         <span class="nav_name">Cập nhật điểm của học sinh</span> </a>
@@ -62,4 +70,3 @@
             <a href="#" class="nav_link"> <i class='bi bi-box-arrow-right nav_logo-icon '></i> <span class="nav_name">SignOut</span> </a>
         </nav>
     </div>
-    
