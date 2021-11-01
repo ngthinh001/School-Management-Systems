@@ -16,14 +16,27 @@
                 <th scope="col">Họ tên học sinh</th>
             </tr>
         </thead>
-        <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>...</td>
-                <td>...</td>
-            </tr>
-        </tbody>
+        <?php
+            if (isset($_SESSION['id'])) {
+                $id = $_SESSION['id'];
+                $sql = "SELECT * FROM hoc_sinh, lop WHERE Magv LIKE '%$id%' AND hoc_sinh.Mal = lop.Mal";
+                $res = mysqli_query($conn, $sql);
+                $count = mysqli_num_rows($res);
+                $stt = 1;
+                if ($count > 0) {
+                    while ($row = mysqli_fetch_assoc($res)) {
+            ?>
+                            <tr>
+                                <th><?php echo $stt++; ?></th>
+                                <td><?php echo $row['Mahs'];?></td>
+                                <td><?php echo $row['Hotenhs']?></td>
+                            </tr>
+             <?php
+                }
+                }
+            } ?>
     </table>
 </div>
+<br>
 <a href="#" class="btn btn-success">Cập nhật danh sách</a>
 <?php include '../gv/footer.php' ?>

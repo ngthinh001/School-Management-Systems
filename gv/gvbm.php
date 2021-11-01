@@ -25,7 +25,7 @@
 
     <div class="action">
         <div class="menu" id="image">
-            <h3>Nguyễn Đức Thịnh <br><span>Giáo viên bộ môn</span> </h3>
+            <h3><?php echo $_SESSION['username'] ?><br><span>Giáo viên bộ môn</span> </h3>
             <ul>
                 <il><i class="bi bi-person-lines-fill"></i>&nbsp;&nbsp;<a class="menu_icon" href="../gvbm/thongtin.php">Hồ sơ <br></a></il>
                 <il><i class="fas fa-unlock-alt"></i>&nbsp;&nbsp;<a class="menu_icon" href="">Đổi mật khẩu</a><br></il>
