@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,21 +27,23 @@
 					<img src="images/img-01.png" alt="IMG">
 				</div>
 
-				<form class="login100-form validate-form" method="post">
+				<form class="login100-form validate-form" method="post" action="../Log/login.php">
 					<span class="login100-form-title">
 						Hệ thống đăng nhập
 					</span>
 
-					<div class="wrap-input100 validate-input" data-validate="Tài khoản bị trống">
-						<input class="input100" type="text" name="uName" placeholder="Tài khoản"  required oninvalid="this.setCustomValidity('Bạn cần điền tên đăng nhập')">
+					<div class="wrap-input100 validate-input" >
+						<input class="input100" type="text" name="uName" placeholder="Tài khoản"  required oninvalid="this.setCustomValidity('Bạn cần điền tên đăng nhập')"
+						oninput="this.setCustomValidity('')" >
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fas fa-user" aria-hidden="true"></i>
 						</span>
 					</div>
 
-					<div class="wrap-input100 validate-input" data-validate="Mật khẩu bị trống">
-						<input class="input100" type="password" name="uPass"  placeholder="Mật khẩu" required oninvalid="this.setCustomValidity('Bạn cần điền mật khẩu')">
+					<div class="wrap-input100 validate-input" >
+						<input class="input100" type="password" name="uPass"  placeholder="Mật khẩu" required oninvalid="this.setCustomValidity('Bạn cần điền mật khẩu')"
+						oninput="this.setCustomValidity('')" >
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-lock" aria-hidden="true"></i>

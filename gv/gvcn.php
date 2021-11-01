@@ -1,7 +1,7 @@
 <?php session_start(); ?>
 <?php
 if (!isset($_SESSION['username']) && !$_SESSION['level'] == 2) {
-    header('Location: login.php');
+    header('Location: ../Log/login.php');
 } else if ($_SESSION['level'] == 3) {
     header('Location: ../gvbm/index.php');
 }
@@ -38,7 +38,7 @@ if (!isset($_SESSION['username']) && !$_SESSION['level'] == 2) {
             <ul>
                 <il><i class="bi bi-person-lines-fill"></i>&nbsp;&nbsp;<a class="menu_icon" href="../gvcn/thongtin.php">Hồ sơ <br></a></il>
                 <il><i class="fas fa-unlock-alt"></i>&nbsp;&nbsp;<a class="menu_icon" href="">Đổi mật khẩu</a><br></il>
-                <il><i class="bi bi-box-arrow-in-right"></i>&nbsp;&nbsp;<a class="menu_icon" href="../logout.php">Đăng xuất</a></il>
+                <il><i class="bi bi-box-arrow-in-right"></i>&nbsp;&nbsp;<a class="menu_icon" href="../Log/logout.php">Đăng xuất</a></il>
             </ul>
         </div>
     </div>

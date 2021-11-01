@@ -29,7 +29,7 @@
             <ul>
                 <il><i class="bi bi-person-lines-fill"></i>&nbsp;&nbsp;<a class="menu_icon" href="../gvbm/thongtin.php">Hồ sơ <br></a></il>
                 <il><i class="fas fa-unlock-alt"></i>&nbsp;&nbsp;<a class="menu_icon" href="">Đổi mật khẩu</a><br></il>
-                <il><i class="bi bi-box-arrow-in-right"></i>&nbsp;&nbsp;<a class="menu_icon" href="../logout.php">Đăng xuất</a></il>
+                <il><i class="bi bi-box-arrow-in-right"></i>&nbsp;&nbsp;<a class="menu_icon" href="../Log/logout.php">Đăng xuất</a></il>
             </ul>
         </div>
     </div>
