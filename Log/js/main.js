@@ -60,11 +60,11 @@ $(document).ready(function() {
             url: 'process.php',
             type: 'post',
             data: {
-                send: userName,
-                send1: userPass
+                sendUser: userName,
+                sendPass: userPass
             },
-            success: function(trave) {
-                alert('toi nhan dc' + trave)
+            success: function(check) {
+                window.location.href = '../admin/dashboard.php';
             }
         })
 

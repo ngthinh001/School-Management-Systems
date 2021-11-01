@@ -11,6 +11,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="../assets/Css/style.css">
 
 
@@ -25,9 +31,9 @@
         <!-- User Account Menu -->
         <div class="action">
             <div class="menu" id="image">
-                <h3>Nguyễn Đức Thịnh <br><span>Admin</span> </h3>
+                <h3>User Account <br><span>Admin</span> </h3>
                 <ul>
-                    <il><i class="bi bi-person-lines-fill"></i>&nbsp;&nbsp;<a class="menu_icon" href="">Hồ sơ <br></a></il>
+                    <il><i class="bi bi-person-lines-fill"></i>&nbsp;&nbsp;<a class="menu_icon" href="../admin/detail.php">Hồ sơ <br></a></il>
                     <il><i class="fas fa-unlock-alt"></i>&nbsp;&nbsp;<a class="menu_icon" href="">Đổi mật khẩu</a><br></il>
                     <il><i class="bi bi-box-arrow-in-right"></i>&nbsp;&nbsp;<a class="menu_icon" href="">Đăng xuất</a></il>
                 </ul>
@@ -39,27 +45,27 @@
         <nav class="nav">
             <div>
 
-                <a href="#" class="nav_logo">
+                <a href="../admin/dashboard.php" class="nav_logo">
                     <i class="bi bi-stack nav_logo-icon"></i>
                     <span class="nav_logo-name">High School</span>
                 </a>
                 <div class="nav_list">
-                    <a href="#" class="nav_link active">
+                    <a href="../admin/dashboard.php" class="nav_link active">
                         <i class='bi bi-house-door nav_logo-icon'></i>
                         <span class="nav_name">Trang chủ</span> </a>
-                    <a href="#" class="nav_link">
+                    <a href="../admin/detail.php" class="nav_link">
                         <i class='bi bi-person-lines-fill nav_logo-icon'></i>
                         <span class="nav_name">Hồ sơ</span> </a>
-                    <a href="#" class="nav_link">
+                    <a href="../admin/class.php" class="nav_link">
                         <i class='bi bi-menu-button nav_logo-icon'></i>
                         <span class="nav_name">QL lớp</span> </a>
-                    <a href="#" class="nav_link">
+                    <a href="../admin/teacher.php" class="nav_link">
                         <i class='bi bi-menu-button nav_logo-icon'></i>
                         <span class="nav_name">QL giáo viên</span> </a>
-                    <a href="#" class="nav_link">
+                    <a href="../admin/student.php" class="nav_link">
                         <i class='bi bi-menu-button nav_logo-icon'></i>
                         <span class="nav_name">QL học sinh</span> </a>
-                    <a href="#" class="nav_link">
+                    <a href="../admin/schedule.php" class="nav_link">
                         <i class='bi bi-calendar3 nav_logo-icon'></i>
                         <span class="nav_name">QL lịch công tác</span> </a>
                     <a href="#" class="nav_link">

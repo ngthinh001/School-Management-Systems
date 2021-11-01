@@ -189,6 +189,20 @@ a {
         top: 60px !important;
         right: -23px !important;
     }
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .n01 {
+        margin-right: 20%!important;
+    }
+    .n02 {
+        margin-left: 0% !important;
+    }
+    .n03 {
+        margin-top: 2% !important;
+    }
 }
 
 .action {
@@ -269,10 +283,22 @@ a {
 
 /* Dashbroad Page  */
 
-.n01 {
+.container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+.n01 {
+    margin-right: 10%;
+}
+
+.n02 {
+    margin-left: 10%;
+}
+
+.n03 {
+    margin-top: 2%;
 }
 
 .n01 .box {
