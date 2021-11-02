@@ -27,72 +27,143 @@
             if (isset($_SESSION['id'])) {
                 $id = $_SESSION['id'];
                 $stt = 1;
-                for ($i = 1; $i <= 3; $i++) {
+
             ?>
+                <?php for ($i = 1; $i <= 3; $i++) { ?> 
                     <tr>
-                        <th><?php echo $stt++?></th>
+                        <th><?php echo $stt++ ?></th>
                         <td><?php
-                            $sql = "SELECT * FROM lichday, lop WHERE lichday.Magv LIKE '%$id%' AND Ngay LIKE '2021-11-01' AND lichday.Mal = lop.Mal";
+                            $sql = "SELECT * FROM lichday, lop WHERE lichday.Magv LIKE '%$id%' AND Ngay LIKE '2021-11-01' AND Tiet LIKE 'Tiết 1,2,3' AND lichday.Mal = lop.Mal";
                             $res = mysqli_query($conn, $sql);
                             $count = mysqli_num_rows($res);
                             if ($count > 0) {
                                 while ($row = mysqli_fetch_assoc($res)) {
-                                    echo $row['Ten_l']."<br />";
+                                    echo $row['Ten_l'];
                                 }
                             }
                             ?> </td>
                         <td> <?php
                                 $id = $_SESSION['id'];
-                                $sql = "SELECT * FROM lichday, lop WHERE lichday.Magv LIKE '%$id%' AND Ngay LIKE '2021-11-02' AND lichday.Mal = lop.Mal";
+                                $sql = "SELECT * FROM lichday, lop WHERE lichday.Magv LIKE '%$id%' AND Ngay LIKE '2021-11-02' AND Tiet LIKE 'Tiết 1,2,3' AND lichday.Mal = lop.Mal";
                                 $res = mysqli_query($conn, $sql);
                                 $count = mysqli_num_rows($res);
                                 if ($count > 0) {
                                     while ($row = mysqli_fetch_assoc($res)) {
-                                        echo $row['Ten_l'] . "<br />";
+                                        echo $row['Ten_l'];
                                     }
                                 }
                                 ?> </td>
                         <td> <?php
                                 $id = $_SESSION['id'];
-                                $sql = "SELECT * FROM lichday, lop WHERE lichday.Magv LIKE '%$id%' AND Ngay LIKE '2021-11-03' AND lichday.Mal = lop.Mal";
+                                $sql = "SELECT * FROM lichday, lop WHERE lichday.Magv LIKE '%$id%' AND Ngay LIKE '2021-11-03'  AND Tiet LIKE 'Tiết 1,2,3'  AND lichday.Mal = lop.Mal";
                                 $res = mysqli_query($conn, $sql);
                                 $count = mysqli_num_rows($res);
                                 if ($count > 0) {
                                     while ($row = mysqli_fetch_assoc($res)) {
-                                        echo $row['Ten_l']."<br />";
+                                        echo $row['Ten_l'];
                                     }
                                 }
                                 ?> </td>
                         <td> <?php
                                 $id = $_SESSION['id'];
-                                $sql = "SELECT * FROM lichday, lop WHERE lichday.Magv LIKE '%$id%' AND Ngay LIKE '2021-11-04' AND lichday.Mal = lop.Mal";
+                                $sql = "SELECT * FROM lichday, lop WHERE lichday.Magv LIKE '%$id%' AND Ngay LIKE '2021-11-04' AND Tiet LIKE 'Tiết 1,2,3'  AND lichday.Mal = lop.Mal";
                                 $res = mysqli_query($conn, $sql);
                                 $count = mysqli_num_rows($res);
                                 if ($count > 0) {
                                     while ($row = mysqli_fetch_assoc($res)) {
-                                        echo $row['Ten_l']."<br />";
+                                        echo $row['Ten_l'];
                                     }
                                 }
                                 ?> </td>
                         <td> <?php
                                 $id = $_SESSION['id'];
-                                $sql = "SELECT * FROM lichday, lop WHERE lichday.Magv LIKE '%$id%' AND Ngay LIKE '2021-11-05' AND lichday.Mal = lop.Mal";
+                                $sql = "SELECT * FROM lichday, lop WHERE lichday.Magv LIKE '%$id%' AND Ngay LIKE '2021-11-05' AND Tiet LIKE 'Tiết 1,2,3'  AND lichday.Mal = lop.Mal";
                                 $res = mysqli_query($conn, $sql);
                                 $count = mysqli_num_rows($res);
                                 if ($count > 0) {
                                     while ($row = mysqli_fetch_assoc($res)) {
-                                        echo $row['Ten_l']."<br />";
+                                        echo $row['Ten_l'];
                                     }
                                 }
                                 ?> </td>
                         <td> <?php
                                 $id = $_SESSION['id'];
-                                $sql = "SELECT * FROM lichday, lop WHERE lichday.Magv LIKE '%$id%' AND Ngay LIKE '2021-11-06' AND lichday.Mal = lop.Mal";
+                                $sql = "SELECT * FROM lichday, lop WHERE lichday.Magv LIKE '%$id%' AND Ngay LIKE '2021-11-06' AND Tiet LIKE 'Tiết 1,2,3'  AND lichday.Mal = lop.Mal";
                                 $res = mysqli_query($conn, $sql);
                                 $count = mysqli_num_rows($res);
                                 if ($count > 0) {
                                     while ($row = mysqli_fetch_assoc($res)) {
-                                        echo $row['Ten_l']."<br />";
+                                        echo $row['Ten_l'];
+                                    }
+                                }
+                                ?> </td>
+
+                    </tr> <?php }
+                        for ($i = 1; $i <= 3; $i++) { ?>
+                    <tr>
+                        <th><?php echo $stt++ ?></th>
+                        <td><?php
+                            $sql = "SELECT * FROM lichday, lop WHERE lichday.Magv LIKE '%$id%' AND Ngay LIKE '2021-11-01' AND Tiet LIKE 'Tiết 4,5,6' AND lichday.Mal = lop.Mal";
+                            $res = mysqli_query($conn, $sql);
+                            $count = mysqli_num_rows($res);
+                            if ($count > 0) {
+                                while ($row = mysqli_fetch_assoc($res)) {
+                                    echo $row['Ten_l'];
+                                }
+                            }
+                            ?> </td>
+                        <td> <?php
+                                $id = $_SESSION['id'];
+                                $sql = "SELECT * FROM lichday, lop WHERE lichday.Magv LIKE '%$id%' AND Ngay LIKE '2021-11-02' AND Tiet LIKE 'Tiết 4,5,6' AND lichday.Mal = lop.Mal";
+                                $res = mysqli_query($conn, $sql);
+                                $count = mysqli_num_rows($res);
+                                if ($count > 0) {
+                                    while ($row = mysqli_fetch_assoc($res)) {
+                                        echo $row['Ten_l'];
+                                    }
+                                }
+                                ?> </td>
+                        <td> <?php
+                                $id = $_SESSION['id'];
+                                $sql = "SELECT * FROM lichday, lop WHERE lichday.Magv LIKE '%$id%' AND Ngay LIKE '2021-11-03'  AND Tiet LIKE 'Tiết 4,5,6'  AND lichday.Mal = lop.Mal";
+                                $res = mysqli_query($conn, $sql);
+                                $count = mysqli_num_rows($res);
+                                if ($count > 0) {
+                                    while ($row = mysqli_fetch_assoc($res)) {
+                                        echo $row['Ten_l'];
+                                    }
+                                }
+                                ?> </td>
+                        <td> <?php
+                                $id = $_SESSION['id'];
+                                $sql = "SELECT * FROM lichday, lop WHERE lichday.Magv LIKE '%$id%' AND Ngay LIKE '2021-11-04' AND Tiet LIKE 'Tiết 4,5,6'  AND lichday.Mal = lop.Mal";
+                                $res = mysqli_query($conn, $sql);
+                                $count = mysqli_num_rows($res);
+                                if ($count > 0) {
+                                    while ($row = mysqli_fetch_assoc($res)) {
+                                        echo $row['Ten_l'];
+                                    }
+                                }
+                                ?> </td>
+                        <td> <?php
+                                $id = $_SESSION['id'];
+                                $sql = "SELECT * FROM lichday, lop WHERE lichday.Magv LIKE '%$id%' AND Ngay LIKE '2021-11-05' AND Tiet LIKE 'Tiết 4,5,6'  AND lichday.Mal = lop.Mal";
+                                $res = mysqli_query($conn, $sql);
+                                $count = mysqli_num_rows($res);
+                                if ($count > 0) {
+                                    while ($row = mysqli_fetch_assoc($res)) {
+                                        echo $row['Ten_l'];
+                                    }
+                                }
+                                ?> </td>
+                        <td> <?php
+                                $id = $_SESSION['id'];
+                                $sql = "SELECT * FROM lichday, lop WHERE lichday.Magv LIKE '%$id%' AND Ngay LIKE '2021-11-06' AND Tiet LIKE 'Tiết 4,5,6'  AND lichday.Mal = lop.Mal";
+                                $res = mysqli_query($conn, $sql);
+                                $count = mysqli_num_rows($res);
+                                if ($count > 0) {
+                                    while ($row = mysqli_fetch_assoc($res)) {
+                                        echo $row['Ten_l'];
                                     }
                                 }
                                 ?> </td>
@@ -100,8 +171,9 @@
                     </tr>
 
             <?php }
-            }
+                    }
             ?>
+
 
         </table>
     </div>

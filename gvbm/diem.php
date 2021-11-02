@@ -9,22 +9,32 @@
 </div>
 <div class="container text-center">
     <form action="diem.php" method="POST" style="float:center">
-        <i class="bi bi-search"></i>
-        Theo lớp: <select name='lop'>
-            <option>10A1</option>
-            <option>11B1</option>
-            <option>12C1</option>
-        </select>
-        <input type="submit" name="submit" value="Tìm kiếm" class="btn btn-outline-primary">
+        <tr>
+            <td><i class="bi bi-search"></i>Theo lớp: </td>
+            <td>
+                <select name="lop">
+                    <?php
+                    $sql1 = "SELECT * FROM lop";
+                    $result1 = mysqli_query($conn, $sql1);
+                    if (mysqli_num_rows($result1)) {
+                        while ($row = mysqli_fetch_assoc($result1)) {
+                            echo '<option>' . $row['Ten_l'] . '</option>';
+                        }
+                    }
+                    ?>
+                </select>
+            </td>
+            <td><input type="submit" name="submit" value="Tìm kiếm" class="btn btn-outline-primary"></td>
+        </tr>
     </form>
 </div>
 <br>
 <form>
     <?php
     if (isset($_POST['submit'])) {
-            $lop = mysqli_real_escape_string($conn, $_POST['lop']);
-            if (isset($_SESSION['id'])) {
-                $id = $_SESSION['id'];
+        $lop =  $_POST['lop'];
+        if (isset($_SESSION['id'])) {
+            $id = $_SESSION['id'];
             $sql = "SELECT distinct Hotenhs, diem, Tenmh, Ten_l FROM lop, hoc_sinh, lichday, monhoc, diem WHERE Ten_l LIKE '%$lop%' AND lichday.Magv LIKE '%$id%'
         and lop.Mal = hoc_sinh.Mal and diem.Mamh = monhoc.Mamh and hoc_sinh.Mahs = diem.Mahs and lichday.Mamh = monhoc.Mamh ";
 
