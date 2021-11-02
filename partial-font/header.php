@@ -50,10 +50,10 @@
                     <span class="nav_logo-name">High School</span>
                 </a>
                 <div class="nav_list">
-                    <a href="../admin/dashboard.php" class="nav_link active">
+                    <a href="../admin/dashboard.php" class="nav_link ">
                         <i class='bi bi-house-door nav_logo-icon'></i>
                         <span class="nav_name">Trang chủ</span> </a>
-                    <a href="../admin/detail.php" class="nav_link">
+                    <a href="../admin/detail.php" class="nav_link ">
                         <i class='bi bi-person-lines-fill nav_logo-icon'></i>
                         <span class="nav_name">Hồ sơ</span> </a>
                     <a href="../admin/class.php" class="nav_link">
