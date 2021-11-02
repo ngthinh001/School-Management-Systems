@@ -19,10 +19,10 @@
                 <?php 
                      //kết nối với mysql
                     include('../sql/connect.php');
-                    $idhs = $_SESSION['id'];
-                    $sql = "SELECT * FROM thi, monhoc WHERE Mahs LIKE '%$idhs%' and thi.Mamh= monhoc.Mamh";
+                    $id = $_SESSION['id'];
+                    $sql = "SELECT * FROM thi, monhoc WHERE Mahs LIKE '%$id%' and thi.Mamh= monhoc.Mamh ORDER BY Ngaythi";
                     $result = mysqli_query($conn, $sql);
-                    echo $idhs;
+                    
                     if(mysqli_num_rows($result) > 0){
                         while($row = mysqli_fetch_assoc($result)){ 
                             
