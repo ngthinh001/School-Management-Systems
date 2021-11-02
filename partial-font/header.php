@@ -17,6 +17,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
     <!-- MDB -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css" rel="stylesheet" />
+    <!-- <link rel="stylesheet" href="../assets/Css/style.css"> -->
     <link rel="stylesheet" href="../assets/Css/style.css">
 
 
@@ -45,12 +46,12 @@
         <nav class="nav">
             <div>
 
-                <a href="../admin/dashboard.php" class="nav_logo">
+                <a href="../admin/" class="nav_logo">
                     <i class="bi bi-stack nav_logo-icon"></i>
                     <span class="nav_logo-name">High School</span>
                 </a>
                 <div class="nav_list">
-                    <a href="../admin/dashboard.php" class="nav_link ">
+                    <a href="./" class="nav_link ">
                         <i class='bi bi-house-door nav_logo-icon'></i>
                         <span class="nav_name">Trang chủ</span> </a>
                     <a href="../admin/detail.php" class="nav_link ">
@@ -68,7 +69,7 @@
                     <a href="../admin/schedule.php" class="nav_link">
                         <i class='bi bi-calendar3 nav_logo-icon'></i>
                         <span class="nav_name">QL lịch công tác</span> </a>
-                    <a href="#" class="nav_link">
+                    <a href="../admin/timetable.php" class="nav_link">
                         <i class='bi bi-calendar3 nav_logo-icon'></i>
                         <span class="nav_name">QL thời khóa biểu</span> </a>
                     <a href="#" class="nav_link">

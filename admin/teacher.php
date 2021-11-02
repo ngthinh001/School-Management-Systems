@@ -1,5 +1,5 @@
 <?php include '../partial-font/header.php' ?>
-
+<?php require_once '../config/dbcommand.php' ?>
 <div class="row justify-content-center">
     <div class="col-md-6 text-center mb-5">
         <h2 class="heading-section" style="margin-top: 30px;">Danh sách giáo viên</h2>
@@ -33,65 +33,31 @@
                         <th>Giới tính</th>
                         <th>Địa chỉ</th>
                         <th>Chức vụ</th>
-                        <th>Số điện thoại</th>                        
+                        <th>Số điện thoại</th>
+                        <th>Thao tác</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="alert" role="alert">
-                        <th scope="row">001</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>markotto@email.com</td>
+                    <?php
+                    $sql = 'select * from giao_vien';
+                    $teacherList = getListOfObject($sql);
+                    foreach ($teacherList as $teacher) {
+                        echo '<tr class="alert" role="alert">
+                        <th scope="row">' . $teacher['Magv'] . '</th>
+                        <td>' . $teacher['Hotengv'] . '</td>
+                        <td>' . $teacher['Ngaysinh'] . '</td>
+                        <td>' . $teacher['Gioitinh'] . '</td>
+                        <td>' . $teacher['Diachi'] . '</td>
+                        <td>' . $teacher['Chucvu'] . '</td>
+                        <td>' . $teacher['Sdt'] . '</td>                      
                         <td>
                             <a href="#" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true"><i class="fa fa-close"></i></span>
                             </a>
                         </td>
-                    </tr>
-                    <tr class="alert" role="alert">
-                        <th scope="row">002</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>jacobthornton@email.com</td>
-                        <td>
-                            <a href="#" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true"><i class="fa fa-close"></i></span>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr class="alert" role="alert">
-                        <th scope="row">003</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>larrybird@email.com</td>
-                        <td>
-                            <a href="#" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true"><i class="fa fa-close"></i></span>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr class="alert" role="alert">
-                        <th scope="row">004</th>
-                        <td>John</td>
-                        <td>Doe</td>
-                        <td>johndoe@email.com</td>
-                        <td>
-                            <a href="#" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true"><i class="fa fa-close"></i></span>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr class="alert" role="alert">
-                        <th scope="row">005</th>
-                        <td>Gary</td>
-                        <td>Bird</td>
-                        <td>garybird@email.com</td>
-                        <td>
-                            <a href="#" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true"><i class="fa fa-close"></i></span>
-                            </a>
-                        </td>
-                    </tr>
+                         </tr>';
+                    }
+                    ?>
                 </tbody>
             </table>
         </div>

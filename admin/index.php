@@ -13,7 +13,7 @@
                 </div>
             </a>
         </div>
-        <div class="col-2 md-4 n01 n03"><a href="class.php">
+        <div class="col-2 md-4 n01 n03"><a href="./class/index.php">
                 <div class="box">
                     <div class="icon"><i class="bi bi-bank2"></i></div>
                     <div class="content">

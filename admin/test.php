@@ -1,5 +1,5 @@
 <?php include '../partial-font/header.php' ?>
-
+<?php require_once '../config/dbcommand.php' ?>
 <div class="row justify-content-center">
     <div class="col-md-6 text-center mb-5">
         <h2 class="heading-section" style="margin-top: 30px;">Danh sách lịch thi</h2>
@@ -12,8 +12,9 @@
     </div> -->
 </div>
 <div class="row">
+    <button>Thêm lớp</button>
     <div class="input-group" style="display:flex;justify-content: end;">
-        <div class="form-outline">           
+        <div class="form-outline">
             <input id="search-focus" type="search" id="form1" class="form-control" />
             <label class="form-label" for="form1">Tìm kiếm lịch thi</label>
         </div>
@@ -32,65 +33,29 @@
                         <th>Mã số báo danh</th>
                         <th>Ngày thi</th>
                         <th>Phòng thi</th>
-                        <th>Giờ thi</th>                      
+                        <th>Giờ thi</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="alert" role="alert">
-                        <th scope="row">001</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>markotto@email.com</td>
+                    <?php
+                    $sql = 'select * from thi';
+                    $testList = getListOfObject($sql);
+                    foreach ($testList as $test) {
+                        echo '<tr class="alert" role="alert">
+                        <th scope="row">' . $test['Mahs'] . '</th>
+                        <td>' . $test['Mamh'] . '</td>
+                        <td>' . $test['Sbd'] . '</td>
+                        <td>' . $test['Ngaythi'] . '</td>
+                        <td>' . $test['Phongthi'] . '</td>
+                        <td>' . $test['Giothi'] . '</td>                   
                         <td>
                             <a href="#" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true"><i class="fa fa-close"></i></span>
                             </a>
                         </td>
-                    </tr>
-                    <tr class="alert" role="alert">
-                        <th scope="row">002</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>jacobthornton@email.com</td>
-                        <td>
-                            <a href="#" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true"><i class="fa fa-close"></i></span>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr class="alert" role="alert">
-                        <th scope="row">003</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>larrybird@email.com</td>
-                        <td>
-                            <a href="#" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true"><i class="fa fa-close"></i></span>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr class="alert" role="alert">
-                        <th scope="row">004</th>
-                        <td>John</td>
-                        <td>Doe</td>
-                        <td>johndoe@email.com</td>
-                        <td>
-                            <a href="#" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true"><i class="fa fa-close"></i></span>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr class="alert" role="alert">
-                        <th scope="row">005</th>
-                        <td>Gary</td>
-                        <td>Bird</td>
-                        <td>garybird@email.com</td>
-                        <td>
-                            <a href="#" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true"><i class="fa fa-close"></i></span>
-                            </a>
-                        </td>
-                    </tr>
+                         </tr>';
+                    }
+                    ?>
                 </tbody>
             </table>
         </div>
@@ -99,3 +64,9 @@
 </div>
 
 <?php include '../partial-font/footer.php' ?>
+
+<?php
+
+
+if ($input)
+?>

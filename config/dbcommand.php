@@ -8,17 +8,18 @@ function execute($sql)
     $conn = mysqli_connect(HOST, USERNAME, PASSWORD, DATABASE);
 
     //SQL
-    mysqli_query($conn, $sql);
+    $e_check =mysqli_query($conn, $sql);
 
     //CLOSE
     mysqli_close($conn);
+    return $e_check;
 }
 
 //lay danh sach 1 doi tuong
 function getListOfObject($sql)
 {
     $conn = mysqli_connect(HOST, USERNAME, PASSWORD, DATABASE);
-
+    mysqli_set_charset($conn, 'UTF8');
     //SQL
     $resultSet = mysqli_query($conn, $sql);
     //khai bao mang 
@@ -32,3 +33,5 @@ function getListOfObject($sql)
 
     return $list;
 }
+
+

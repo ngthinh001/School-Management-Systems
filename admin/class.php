@@ -1,5 +1,5 @@
 <?php include '../partial-font/header.php' ?>
-
+<?php require_once '../config/dbcommand.php' ?>
 <div class="row justify-content-center">
     <div class="col-md-6 text-center mb-5">
         <h2 class="heading-section" style="margin-top: 30px;">Danh sách lớp</h2>
@@ -11,6 +11,7 @@
         <h2 class="heading-section">Table #02</h2>
     </div> -->
 </div>
+<a href="../actions/acclass.php"><button class="btn btn-success">Thêm lớp</button></a>
 <div class="row">
     <div class="input-group" style="display:flex;justify-content: end;">
         <div class="form-outline">
@@ -21,7 +22,8 @@
             <i class="fas fa-search"></i>
         </button>
     </div>
-    <br>
+</div>
+<div class="row " style="margin-top: 20px;">
     <div class="col-md-12">
         <div class="table-wrap">
             <table class="table" style="border-style: dashed double solid; border-width: 8px">
@@ -36,66 +38,30 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="alert" role="alert">
-                        <th scope="row">001</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>markotto@email.com</td>
+                    <?php
+                    $sql = 'select * from lop';
+                    $classList = getListOfObject($sql);
+                    foreach ($classList as $class) {
+                        echo '<tr class="alert" role="alert">
+                        <th scope="row">' . $class['Mal'] . '</th>
+                        <td>' . $class['Ten_l'] . '</td>
+                        <td>' . $class['Sohs'] . '</td>
+                        <td>' . $class['Magv'] . '</td>                                              
                         <td>
-                            <a href="#" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true"><i class="fa fa-close"></i></span>
+                            <a href="../actions/acclass.php?id='.$class['Mal'].'" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true" style="color: green"><i class="fas fa-user-edit"></i></span> 
                             </a>
+                            <a href="../actions/acclass.php" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true" style="color: red"><i class="fas fa-user-times"></i></span>
+                            </a>                            
                         </td>
-                    </tr>
-                    <tr class="alert" role="alert">
-                        <th scope="row">002</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>jacobthornton@email.com</td>
-                        <td>
-                            <a href="#" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true"><i class="fa fa-close"></i></span>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr class="alert" role="alert">
-                        <th scope="row">003</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>larrybird@email.com</td>
-                        <td>
-                            <a href="#" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true"><i class="fa fa-close"></i></span>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr class="alert" role="alert">
-                        <th scope="row">004</th>
-                        <td>John</td>
-                        <td>Doe</td>
-                        <td>johndoe@email.com</td>
-                        <td>
-                            <a href="#" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true"><i class="fa fa-close"></i></span>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr class="alert" role="alert">
-                        <th scope="row">005</th>
-                        <td>Gary</td>
-                        <td>Bird</td>
-                        <td>garybird@email.com</td>
-                        <td>
-                            <a href="#" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true"><i class="fa fa-close"></i></span>
-                            </a>
-                        </td>
-                    </tr>
+                         </tr>';
+                    }
+                    ?>
                 </tbody>
             </table>
         </div>
     </div>
-</div>
 </div>
 
 <?php include '../partial-font/footer.php' ?>
