@@ -19,6 +19,7 @@ function execute($sql)
 function getListOfObject($sql)
 {
     $conn = mysqli_connect(HOST, USERNAME, PASSWORD, DATABASE);
+    mysqli_set_charset($conn, 'UTF8');
     // mysqli_set_charset($conn, 'UTF8');
     //SQL
     $resultSet = mysqli_query($conn, $sql);
