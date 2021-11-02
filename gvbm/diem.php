@@ -29,14 +29,14 @@
     </form>
 </div>
 <br>
-<form>
+<form style="padding: 0 20%">
     <?php
     if (isset($_POST['submit'])) {
         $lop =  $_POST['lop'];
         if (isset($_SESSION['id'])) {
             $id = $_SESSION['id'];
             $sql = "SELECT distinct Hotenhs, diem, Tenmh, Ten_l FROM lop, hoc_sinh, lichday, monhoc, diem WHERE Ten_l LIKE '%$lop%' AND lichday.Magv LIKE '%$id%'
-        and lop.Mal = hoc_sinh.Mal and diem.Mamh = monhoc.Mamh and hoc_sinh.Mahs = diem.Mahs and lichday.Mamh = monhoc.Mamh ";
+            and lop.Mal = hoc_sinh.Mal and diem.Mamh = monhoc.Mamh and hoc_sinh.Mahs = diem.Mahs and lichday.Mamh = monhoc.Mamh  ";
 
             $res = mysqli_query($conn, $sql);
             $count = mysqli_num_rows($res);
@@ -52,7 +52,6 @@
                                 <th scope="col">Lớp</th>
                                 <th scope="col">Điểm số</th>
                                 <th scope="col">Tên môn</th>
-                                <th scope="col">Ghi Chú</th>
                             </tr>
                         </thead>
                         <?php
@@ -66,18 +65,24 @@
                                 <td><?php echo $row['Ten_l'] ?>. </td>
                                 <td><?php echo $row['diem'] ?>. </td>
                                 <td><?php echo $row['Tenmh'] ?>. </td>
-                                <td><a href="#" class="btn btn-success">Cập nhật điểm</a></td>
+                                <td></td>
                             </tr>
                         <?php
                         } ?>
                     </table>
                 </div>
+                <br>
+                <div class="col-md-4" style="float: left;">
+                    <input type="file" name="employee_file" style="margin-top:15px;" />
+                </div>
+                <div class="col-md-5" style="float: left;">
+                    <input type="submit" name="capnhatdiem" id="upload" value="Cập nhật Điểm" style="margin-top:10px;" class="btn btn-success" />
+                </div>
+                <br>
     <?php }
         }
     }
     ?>
-
-
 </form>
 
 <br>

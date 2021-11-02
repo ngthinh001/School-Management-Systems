@@ -1,11 +1,4 @@
 <?php session_start(); ?>
-<?php
-if (!isset($_SESSION['username']) && !$_SESSION['level'] == 2) {
-    header('Location: ../Log/login.php');
-} else if ($_SESSION['level'] == 3) {
-    header('Location: ../gvbm/index.php');
-}
-?>
 
 <?php include '../sql/connect.php' ?>
 

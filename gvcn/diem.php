@@ -18,7 +18,7 @@
                     if (mysqli_num_rows($result1)) {
                         while ($row = mysqli_fetch_assoc($result1)) {
                             echo '<option>' . $row['Tenmh'] . '</option>';
-                           }
+                        }
                     }
                     ?>
                 </select>
@@ -31,13 +31,21 @@
 
 <?php include '../gv/footer.php' ?>
 
-<form>
+<form style="padding: 0 20%">
     <?php
     if (isset($_POST['submit'])) {
-        $mon = mysqli_real_escape_string($conn, $_POST['mon']); 
+        $id = $_SESSION['id'];
+        $mon = mysqli_real_escape_string($conn, $_POST['mon']);
         echo "Tên môn học:  $mon";
-        $sql = "SELECT distinct Hotenhs, diem FROM lop, hoc_sinh, lichday, monhoc, diem WHERE Ten_l like '%10A1%' AND Tenmh like '%$mon%'
-        and lop.Mal = hoc_sinh.Mal and diem.Mamh = monhoc.Mamh and hoc_sinh.Mahs = diem.Mahs and lichday.Mamh = monhoc.Mamh ";
+        //Lấy tên lớp mà giáo viên đang chủ nhiệm
+        $s = "SELECT * FROM lop, giao_vien WHERE giao_vien.Magv like '%$id%' and lop.Magv = giao_vien.Magv";
+        $s1 = mysqli_query($conn, $s);
+        $u = mysqli_fetch_assoc($s1);
+        $tenl = $u['Ten_l'];
+
+        //lấy tên học sinh và điểm của sinh viên trong lớp
+        $sql = "SELECT Hotenhs, diem FROM lop, hoc_sinh, monhoc, diem WHERE Ten_l like '%$tenl%' AND Tenmh like '%$mon%'
+        and lop.Mal = hoc_sinh.Mal and diem.Mamh = monhoc.Mamh and hoc_sinh.Mahs = diem.Mahs ";
 
         $res = mysqli_query($conn, $sql);
         $count = mysqli_num_rows($res);
@@ -51,7 +59,6 @@
                             <th scope="col">STT</th>
                             <th scope="col">Họ tên học sinh</th>
                             <th scope="col">Điểm số</th>
-                            <th scope="col">Ghi Chú</th>
                         </tr>
                     </thead>
                     <?php
@@ -63,15 +70,50 @@
                             <td><?php echo $stt++; ?> </td>
                             <td><?php echo $row['Hotenhs'] ?> </td>
                             <td><?php echo $row['diem'] ?> </td>
-                            <td><a href="#" class="btn btn-success">Cập nhật điểm</a></td>
                         </tr>
                     <?php
                     } ?>
                 </table>
             </div>
+            <br>
+            <div class="col-md-4" style="float: left;">
+                <input type="file" name="diem" style="margin-top:15px;" />
+            </div>
+            <div class="col-md-5" style="float: left;">
+                <input type="submit" name="capnhatdiem" id="upload" value="Cập nhật Điểm" style="margin-top:10px;" class="btn btn-success" />
+            </div>
+            <br>
     <?php }
     }
     ?>
-
-
 </form>
+
+<script>  
+      $(document).ready(function(){  
+           $('#upload_csv').on("submit", function(e){  
+                e.preventDefault(); //form will not submitted  
+                $.ajax({  
+                     url:"update/import.php",  
+                     method:"POST",  
+                     data:new FormData(this),  
+                     contentType:false,          // The content type used when sending data to the server.  
+                     cache:false,                // To unable request pages to be cached  
+                     processData:false,          // To send DOMDocument or non processed data file it is set to false  
+                     success: function(data){  
+                          if(data=='Error1')  
+                          {  
+                               alert("Invalid File");  
+                          }  
+                          else if(data == "Error2")  
+                          {  
+                               alert("Please Select File");  
+                          }  
+                          else  
+                          {  
+                               $('#employee_table').html(data);  
+                          }  
+                     }  
+                })  
+           });  
+      });  
+ </script> 

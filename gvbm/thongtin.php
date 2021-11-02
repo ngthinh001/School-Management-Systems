@@ -55,7 +55,6 @@ if (isset($_SESSION['id'])) {
         <br> <br>
         <div>
             <a href="#" class="btn btn-success">Cập nhật thông tin</a>
-            <a href="#" class="btn btn-primary">Thay đổi mật khẩu</a>
         </div>
     </form>
 </center>

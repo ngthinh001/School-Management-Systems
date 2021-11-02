@@ -6,8 +6,7 @@
         <br><br>
     </div>
 </div>
-<br><br>
-<div class="table-responsive">
+<div class="table-responsive" style="padding: 0 20%">
     <table class="table table-striped table-hover">
         <thead>
             <tr>
@@ -44,7 +43,6 @@
                 }}
             } ?>
     </table>
+    <br>
 </div>
-<br>
-<a href="#" class="btn btn-success">Cập nhật danh sách</a>
 <?php include '../gv/footer.php' ?>

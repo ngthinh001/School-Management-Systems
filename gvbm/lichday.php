@@ -8,7 +8,7 @@
     </div>
 </div>
 <br><br>
-<form>
+<form style="padding: 0 10%">
     <div class="table-responsive">
         <table class="table table-striped table-hover">
             <thead>
@@ -178,5 +178,11 @@
         </table>
     </div>
     <br>
-    <a href="#" class="btn btn-success">Cập nhật lịch</a>
+    <div class="col-md-4" style="float: left;">
+                <input type="file" name="employee_file" style="margin-top:15px;" />
+            </div>
+            <div class="col-md-5" style="float: left;">
+                <input type="submit" name="capnhatlich" id="upload" value="Cập nhật Lịch" style="margin-top:10px;" class="btn btn-success" />
+            </div>
+    <br>
     <?php include '../gv/footer.php' ?>

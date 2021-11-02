@@ -105,7 +105,6 @@ if (isset($_POST["submit"])) {
 	$password = strip_tags($password);
 	$password = addslashes($password);
 
-
 	$sql = "SELECT * from users where Accout = '$username' and Pass = '$password' ";
 	$query = mysqli_query($conn, $sql);
 	$num_rows = mysqli_num_rows($query);
@@ -116,9 +115,20 @@ if (isset($_POST["submit"])) {
 		$_SESSION['username'] = $username;
 		$_SESSION['level'] = $user['Level'];
 		$_SESSION['id'] = $user['ID'];
-		header('Location: ../gvcn/index.php');
-	} 
+		switch ($user['Level']) {
+			case 1:
+				header('Location: ../admin/');
+				break;
+			case 2:
+				header('Location: ../gvcn/index.php');
+				break;
+			case 3:
+				header('Location: ../gvbm/index.php');
+				break;
+			case 4: 
+				header('Location: ../hocsinh/index.php');
+				break;
+		}
+	} echo '<script type="text/javascript"> alert("Tên đăng nhập hoặc mật khẩu bị sai");</script>';
 }
-
-
 ?>
