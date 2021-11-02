@@ -80,7 +80,7 @@
                     </div>
                 </div>
             </a></div>
-        <div class="col-2 n01"><a href="">
+        <div class="col-2 n01"><a href="../Log/logout.php">
                 <div class="box">
                     <div class="icon"><i class="bi bi-arrow-right-square"></i></div>
                     <div class="content">

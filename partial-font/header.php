@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (!isset($_SESSION['username'])) {
+    header("Location: ../Log/login.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,7 +38,7 @@
         <!-- User Account Menu -->
         <div class="action">
             <div class="menu" id="image">
-                <h3>User Account <br><span>Admin</span> </h3>
+                <h3><br><span>Admin</span> </h3>
                 <ul>
                     <il><i class="bi bi-person-lines-fill"></i>&nbsp;&nbsp;<a class="menu_icon" href="../admin/detail.php">Hồ sơ <br></a></il>
                     <il><i class="fas fa-unlock-alt"></i>&nbsp;&nbsp;<a class="menu_icon" href="">Đổi mật khẩu</a><br></il>
@@ -75,11 +81,8 @@
                     <a href="#" class="nav_link">
                         <i class="bi bi-envelope-fill nav_logo-icon"></i>
                         <span class="nav_name">Gửi thông báo</span> </a>
-
-
-
                 </div>
             </div>
-            <a href="#" class="nav_link"> <i class='bi bi-box-arrow-right nav_logo-icon '></i> <span class="nav_name">Đăng xuất</span> </a>
+            <a href="../Log/logout.php" class="nav_link"><i class='bi bi-box-arrow-right nav_logo-icon '></i> <span class="nav_name">Đăng xuất</span> </a>
         </nav>
     </div>
