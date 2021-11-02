@@ -37,9 +37,9 @@
                         <a href="thong_tin_gvday.php" class="nav_link">
                             <i class='bi bi-menu-button-fill nav_logo-icon'></i>
                             <span class="nav_name">Thông tin giáo viên chủ nhiệm</span> </a>
-                        <a href="lienhe.php" class="nav_link">
-                            <i class="bi bi-telephone-fill nav_logo-icon"></i>
-                            <span class="nav_name">Liên hệ</span> </a>
+                        <a href="lichthi.php" class="nav_link">
+                            <i class="bi bi-calendar-month nav_logo-icon"></i>
+                            <span class="nav_name">Lịch thi</span> </a>
                     </div>
                 </div> 
                 <a href="../Log/logout.php" class="nav_link"> <i class='bi bi-box-arrow-right nav_logo-icon '></i> <span class="nav_name">SignOut</span> </a>

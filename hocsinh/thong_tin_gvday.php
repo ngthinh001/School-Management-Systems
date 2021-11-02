@@ -26,32 +26,33 @@
                     $ten = $_SESSION['username'] ;
                     $pas = $_SESSION['password'];
                     $id = $_SESSION['id'];
-                    $sql = "SELECT * FROM giao_vien, monhoc, lichday WHERE  giao_vien.Magv = lichday.Magv AND monhoc.Mamh=lichday.Mamh AND
-                             Mal= (SELECT Mal FROM hoc_sinh WHERE Mahs LIKE '%$id%')";
+
+                    //lấy ra mã lớp của sinh viên
+                    $s = "SELECT Mal FROM hoc_sinh WHERE Mahs LIKE '%$id%'";
+                    $re =  mysqli_query($conn, $s);
+                    $u = mysqli_fetch_assoc($re);
+                    $malop = $u['Mal'];
+                    echo $malop;
+
+                    $sql = "SELECT * FROM giao_vien, monhoc, lichday WHERE Mal LIKE '%$malop%' AND giao_vien.Magv = lichday.Magv AND monhoc.Mamh=lichday.Mamh ";
                     $result = mysqli_query($conn, $sql);
                     if(mysqli_num_rows($result) > 0){
                         while($row = mysqli_fetch_assoc($result)){
-                            $magv = $row['Magv'];  
-                            $hoten = $row['Hotengv'];
-                            $gioitinh= $row['Gioitinh'];
-                            $ngaysinh = $row['Ngaysinh'];
-                            $Diachi = $row['Diachi'];
-                            $Tenmon = $row['Tenmh'];
-                            }
+                            ?>
+                                <tr>
+                                    <td ><?php echo $row['Magv']; ?></td>
+                                    <td><?php echo $row['Hotengv']; ?></td>
+                                    <td><?php echo $row['Gioitinh']; ?></td>
+                                    <td><?php echo $row['Ngaysinh']; ?></td>
+                                    <td><?php echo $row['Diachi']; ?></td>
+                                    <td><?php echo $row['Tenmh']; ?></td>
+                                   
+                                </tr>  
+                <?php    
                     }
+                }
                 ?>
-                <tbody>
-                    <tr>
-                    <th ><?php echo $magv; ?></th>
-                    <td><?php echo $hoten; ?></td>
-                    <td><?php echo $gioitinh; ?></td>
-                    <td><?php echo $ngaysinh; ?></td>
-                    <td><?php echo $Diachi; ?></td>
-                    <td><?php echo $Tenmon; ?></td>
-                    
-                    </tr>
-                    
-                </tbody>
+               
             </table>
             <?php
             //Bước 4: Đóng kết nối
@@ -60,6 +61,4 @@
     </div>
 </main>
 
-<?php include('footer.php');
-
-?>
+<?php include('footer.php');?>

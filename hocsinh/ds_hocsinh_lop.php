@@ -21,37 +21,36 @@
                      //kết nối với mysql
                     include('../sql/connect.php');
                     
-                    
                     $id = $_SESSION['id'];
-                    $sql = "SELECT * FROM hoc_sinh WHERE
-                            Mal LIKE (SELECT Mal FROM hoc_sinh WHERE Mahs LIKE '%$id%')";
-                    $result = mysqli_query($conn, $sql);
-
-                    if(mysqli_num_rows($result) > 0){
-                        while($row = mysqli_fetch_assoc($result)){
-                            $mahs = $row['Mahs'];  
-                            $hoten = $row['Hotenhs'];
-                            $gioitinh= $row['Gioitinh'];
-                            $ngaysinh = $row['Ngaysinh'];
-                            $mal = $row['Mal'];
-                            $Hocki = $row['Hocky'];
-                            $namhoc = $row['Namhoc'];
+                    //lấy ra mã lớp của sinh viên
+                    $s = "SELECT Mal FROM hoc_sinh WHERE Mahs LIKE '%$id%'";
+                    $re =  mysqli_query($conn, $s);
+                    $u = mysqli_fetch_assoc($re);
+                    $malop = $u['Mal'];
+                    echo $malop;
                     
+                    //lấy ra thông tin của học sinh có mal= $malps
+                    $sql = "SELECT * FROM hoc_sinh WHERE Mal LIKE '%$malop%'";
+                    $result = mysqli_query($conn, $sql);
+                    
+                    if(mysqli_num_rows($result) > 0){
+                        while($row = mysqli_fetch_assoc($result)){ 
+                            
+                 ?>
+                                <tr>
+                                    <td ><?php echo $row['Mahs']; ?></td>
+                                    <td><?php echo $row['Hotenhs']; ?></td>
+                                    <td><?php echo $row['Gioitinh']; ?></td>
+                                    <td><?php echo $row['Ngaysinh']; ?></td>
+                                    <td><?php echo $row['Mal']; ?></td>
+                                    <td><?php echo $row['Hocky']; ?></td>
+                                    <td><?php echo $row['Namhoc']; ?></td>
+                                </tr>  
+                <?php    
                         }
                     }
                 ?>
-                <tbody>
-                    <tr>
-                    <th ><?php echo $mahs; ?></th>
-                    <td><?php echo $hoten; ?></td>
-                    <td><?php echo $gioitinh; ?></td>
-                    <td><?php echo $ngaysinh; ?></td>
-                    <td><?php echo $mal; ?></td>
-                    <td><?php echo $Hocki; ?></td>
-                    <td><?php echo $namhoc; ?></td>
-                    </tr>
-                    
-                </tbody>
+                
             </table>
             <?php
             //Bước 4: Đóng kết nối

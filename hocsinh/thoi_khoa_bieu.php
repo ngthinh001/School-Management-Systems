@@ -22,33 +22,24 @@
                     include('../sql/connect.php');
                     
                     $id = $_SESSION['id'];
-                    $sql = "SELECT * FROM lichday, monhoc WHERE lichday.Mamh= monhoc.Mamh AND Mal = (SELECT Mal FROM hoc_sinh WHERE Mahs LIKE '%$id%')";
+                    $sql = "SELECT * FROM lichday, monhoc WHERE lichday.Mamh= monhoc.Mamh AND Mal = (SELECT Mal FROM hoc_sinh WHERE Mahs LIKE '%$id%' ORDER BY NGAY ASC)";
                     $result = mysqli_query($conn, $sql);
                     if(mysqli_num_rows($result) > 0){
                         while($row = mysqli_fetch_assoc($result)){
-                            $mamh = $row['Mamh'];  
-                            $tenmh = $row['Tenmh'];
-                            $mal= $row['Mal'];
-                            $tiet = $row['Tiet'];
-                            $ngayday = $row['Ngay'];
-                            $Hocki = $row['Hocky'];
-                            $namhoc = $row['Namhoc'];
-                    
-                        }
+                            ?>
+                            <tr>
+                                <td ><?php echo $row['Mamh']; ?></td>
+                                <td><?php echo $row['Tenmh']; ?></td>
+                                <td><?php echo $row['Mal']; ?></td>
+                                <td><?php echo $row['Tiet']; ?></td>
+                                <td><?php echo $row['Ngay']; ?></td>
+                                <td><?php echo $row['Hocky']; ?></td>
+                                <td><?php echo $row['Namhoc']; ?></td>
+                            </tr>  
+            <?php    
                     }
-                ?>
-                <tbody>
-                    <tr>
-                    <th ><?php echo  $mamh; ?></th>
-                    <td><?php echo $tenmh; ?></td>
-                    <td><?php echo $mal; ?></td>
-                    <td><?php echo $tiet; ?></td>
-                    <td><?php echo $ngayday; ?></td>
-                    <td><?php echo $Hocki; ?></td>
-                    <td><?php echo $namhoc; ?></td>
-                    </tr>
-                    
-                </tbody>
+                }
+            ?>
             </table>
             <?php
             //Bước 4: Đóng kết nối
