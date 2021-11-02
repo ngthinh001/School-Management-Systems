@@ -1,16 +1,14 @@
-<<<<<<< HEAD
-<?php 
-   $conn = mysqli_connect('localhost', 'root', '', 'truonghoc','3306');
-   if(!$conn){
-       die("Kết nối không thành công");
-   }
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "qlth";
 
-=======
-<?php 
-   $conn = mysqli_connect('localhost', 'root', '', 'truonghoc','3306');
-   if(!$conn){
-       die("Kết nối không thành công");
-   }
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
 
->>>>>>> cca796e2cc5633d7af98eaf1b8046bf5986990a6
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}  "connected";
 ?>

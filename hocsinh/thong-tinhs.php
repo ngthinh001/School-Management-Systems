@@ -5,7 +5,8 @@
     include('../sql/connect.php');
     $ten = $_SESSION['username'] ;
     $pas = $_SESSION['password'];
-    $sql = "select * from hocsinh where Hotenhs = '$ten' and Mahs=(select ID from nguoidung where Pass= '$pas') ";
+    $id = $_SESSION['id'];
+    $sql = "SELECT * FROM hoc_sinh WHERE Hotenhs LIKE '%$ten%' AND Mahs LIKE '%$id%' ";
 	$result = mysqli_query($conn, $sql);
 
     if(mysqli_num_rows($result)){
@@ -17,8 +18,7 @@
         $mal = $row['Mal'];
         $Hocki = $row['Hocky'];
        $namhoc = $row['Namhoc'];
-       $tenph = $row['TenPhuHuynh'];
-       $sdtph = $row['sdt_phuhuynh'];
+       $sdtph = $row['Sdtph'];
         }
 }
 
@@ -58,10 +58,7 @@
                 <label for="namhoc" class="form-label">Năm học</label>
                 <input type="text" class="form-control" name="namhoc" value="<?php echo  $namhoc; ?>">
             </div>
-            <div class="mb-3">
-                <label for="tenph" class="form-label">Tên phụ huynh</label>
-                <input type="text" class="form-control" name="tenph" value="<?php echo  $tenph; ?>">
-            </div>
+            
             <div class="mb-3">
                 <label for="sdtph" class="form-label">Số điện thoại phụ huynh</label>
                 <input type="text" class="form-control" name="sdtph" value="<?php echo  $sdtph; ?>">

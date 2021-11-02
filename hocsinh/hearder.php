@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,7 +19,7 @@
             <nav class="nav">
                 <div> <a href="#" class="nav_logo"> <i class="bi bi-stack nav_logo-icon"></i> <span class="nav_logo-name">High School</span> </a>
                     <div class="nav_list">
-                        <a href="imgs/anhlogin.php" class="nav_link active">
+                        <a href="../Log/images/img-01.png" class="nav_link active">
                             <i class='bi bi-house-door nav_logo-icon'></i>
                             <span class="nav_name">Trang chủ</span> </a>
                         <a href="thong-tinhs.php" class="nav_link">
@@ -43,7 +42,7 @@
                             <span class="nav_name">Liên hệ</span> </a>
                     </div>
                 </div> 
-                <a href="#" class="nav_link"> <i class='bi bi-box-arrow-right nav_logo-icon '></i> <span class="nav_name">SignOut</span> </a>
+                <a href="../Log/logout.php" class="nav_link"> <i class='bi bi-box-arrow-right nav_logo-icon '></i> <span class="nav_name">SignOut</span> </a>
             </nav>
 
         </div>

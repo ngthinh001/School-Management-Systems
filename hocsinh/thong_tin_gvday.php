@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <?php
     session_start();
 ?>
@@ -25,8 +25,9 @@
                     include('../sql/connect.php');
                     $ten = $_SESSION['username'] ;
                     $pas = $_SESSION['password'];
-                    $sql = "select * from giaovien, monhoc where  giaovien.Magv = monhoc.Magv and
-                             Mal= (select Mal from hocsinh where Hotenhs= '$ten'and Mahs=(select ID from nguoidung where Pass='$pas'))";
+                    $id = $_SESSION['id'];
+                    $sql = "SELECT * FROM giao_vien, monhoc, lichday WHERE  giao_vien.Magv = lichday.Magv AND monhoc.Mamh=lichday.Mamh AND
+                             Mal= (SELECT Mal FROM hoc_sinh WHERE Mahs LIKE '%$id%')";
                     $result = mysqli_query($conn, $sql);
                     if(mysqli_num_rows($result) > 0){
                         while($row = mysqli_fetch_assoc($result)){

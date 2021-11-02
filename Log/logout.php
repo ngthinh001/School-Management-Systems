@@ -1,6 +1,6 @@
 <?php 
     //Include constants.php for SITEURL
-    include('sql/connect.php');
+    include('../sql/connect.php');
     //1. Destory the Session
     session_destroy(); //Unsets $_SESSION['user']
 

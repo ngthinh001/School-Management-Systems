@@ -1,7 +1,4 @@
-
-<?php
-    session_start();
-?>
+<?php session_start();?>
 
 <?php include('hearder.php'); ?>
 <main>
@@ -23,11 +20,11 @@
                 <?php 
                      //kết nối với mysql
                     include('../sql/connect.php');
-                    $ten = $_SESSION['username'] ;
-                    $pas = $_SESSION['password'];
-                    $sql = "select Mahs, Hotenhs, Gioitinh, Ngaysinh, Mal, Hocky, Namhoc from hocsinh where
-                            Mal = (select Mal from hocsinh where Hotenhs= '$ten' and
-                            Mahs=(select ID from nguoidung where Pass='$pas'))";
+                    
+                    
+                    $id = $_SESSION['id'];
+                    $sql = "SELECT * FROM hoc_sinh WHERE
+                            Mal LIKE (SELECT Mal FROM hoc_sinh WHERE Mahs LIKE '%$id%')";
                     $result = mysqli_query($conn, $sql);
 
                     if(mysqli_num_rows($result) > 0){
