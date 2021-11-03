@@ -123,7 +123,7 @@ if (isset($_POST["submit"])) {
         $user = mysqli_fetch_assoc($query);
         if ($password == $user['Pass']) {
             if ($password1 != $password2) {
-                echo "Mật khẩu bạn nhập lại chưa đúng";
+                echo '<script type="text/javascript"> alert("Mật khẩu bạn nhập lại chưa đúng");</script>';
             } else {
                 if ($password1 == $password)
                 {
@@ -138,7 +138,7 @@ if (isset($_POST["submit"])) {
                         echo "Chưa cập nhật thành công!";
                     }
                 }
-                else echo "Mật khẩu mới trùng mật khẩu cũ";
+                else echo '<script type="text/javascript"> alert("Mật khẩu mới trùng mật khẩu cũ");</script>';
             }
         }
     }

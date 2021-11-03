@@ -53,7 +53,7 @@
         if ($count > 0) {
     ?>
             <div class="table-responsive">
-                <table class="table table-striped table-hover">
+                <table class="table table-striped table-hover" id="tbdiem">
                     <thead>
                         <tr>
                             <th scope="col">STT</th>
@@ -76,30 +76,32 @@
                 </table>
             </div>
             <br>
-            <div class="col-md-4" style="float: left;">
-                <input type="file" name="diem" style="margin-top:15px;" />
-            </div>
-            <div class="col-md-5" style="float: left;">
-                <input type="submit" name="capnhatdiem" id="upload" value="Cập nhật Điểm" style="margin-top:10px;" class="btn btn-success" />
-            </div>
+            <form id="upload_csv" method="post" enctype="multipart/form-data">
+                <div class="col-md-4" style="float: left;">
+                    <input type="file" name="diem" id="diemcalop" style="margin-top:15px;" />
+                </div>
+                <div class="col-md-5" style="float: left;">
+                    <input type="submit" name="capnhatdiem" id="upload" value="Cập nhật Điểm" style="margin-top:10px;" class="btn btn-success" />
+                </div>
+            </form>
             <br>
     <?php }
     }
     ?>
 </form>
 
-<script>  
-      $(document).ready(function(){  
-           $('#upload_csv').on("submit", function(e){  
-                e.preventDefault(); //form will not submitted  
-                $.ajax({  
-                     url:"update/import.php",  
-                     method:"POST",  
-                     data:new FormData(this),  
-                     contentType:false,          // The content type used when sending data to the server.  
-                     cache:false,                // To unable request pages to be cached  
-                     processData:false,          // To send DOMDocument or non processed data file it is set to false  
-                     success: function(data){  
+<script>
+    $(document).ready(function() {
+        $('#upload_csv').on("submit", function(e) {
+            e.preventDefault(); //form will not submitted  
+            $.ajax({
+                url: "update/import_diem.php",
+                method: "POST",
+                data: new FormData(this),
+                contentType: false, // The content type used when sending data to the server.  
+                cache: false, // To unable request pages to be cached  
+                processData: false, // To send DOMDocument or non processed data file it is set to false  
+                uccess: function(data){  
                           if(data=='Error1')  
                           {  
                                alert("Invalid File");  
@@ -110,10 +112,10 @@
                           }  
                           else  
                           {  
-                               $('#employee_table').html(data);  
+                               $('tbdiem').html(data);  
                           }  
                      }  
                 })  
            });  
       });  
- </script> 
+</script>
