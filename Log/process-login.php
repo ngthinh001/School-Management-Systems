@@ -26,7 +26,10 @@ if (isset($_POST["submit"])) {
 		$_SESSION['password'] = $password;
 		$_SESSION['level'] = $user['Level'];
 		$_SESSION['id'] = $user['ID'];
+		
 		header('Location: ../hocsinh/index.php');
+		
+		
 		
 	} echo '<script type="text/javascript"> alert("Tên đăng nhập hoặc mật khẩu bị sai");</script>';
 }

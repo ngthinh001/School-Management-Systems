@@ -40,6 +40,9 @@
                         <a href="lichthi.php" class="nav_link">
                             <i class="bi bi-calendar-month nav_logo-icon"></i>
                             <span class="nav_name">Lịch thi</span> </a>
+                        <a href="chat.php" class="nav_link">
+                            <i class="bi bi-chat-dots-fill nav_logo-icon"></i>
+                            <span class="nav_name">Liên hệ</span> </a>
                     </div>
                 </div> 
                 <a href="../Log/logout.php" class="nav_link"> <i class='bi bi-box-arrow-right nav_logo-icon '></i> <span class="nav_name">SignOut</span> </a>
