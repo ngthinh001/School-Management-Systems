@@ -6,6 +6,7 @@
     <title>Change Password</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
     <!--===============================================================================================-->
     <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
     <!--===============================================================================================-->
@@ -27,10 +28,19 @@
                     <img src="images/img-01.png" alt="IMG">
                 </div>
 
-                <form class="login100-form validate-form" method="post" action="../Log/login.php">
+                <form class="login100-form validate-form" method="post" action="../Log/changepass.php" id = "formChangePass">
                     <span class="login100-form-title">
                         Hệ thống đăng nhập - Thay đổi mật khẩu
                     </span>
+
+                    <div class="wrap-input100 validate-input" >
+                        <input class="input100" type="text" name="uName" placeholder="Tài khoản"  required oninvalid="this.setCustomValidity('Bạn cần điền tên đăng nhập')"
+                        oninput="this.setCustomValidity('')" >
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                        <i class="fas fa-user" aria-hidden="true"></i>
+                        </span>
+                    </div>
 
                     <div class="wrap-input100 validate-input">
                         <input class="input100" type="password" name="uPass" placeholder="Mật khẩu cũ" required oninvalid="this.setCustomValidity('Bạn cần điền tên đăng nhập')" oninput="this.setCustomValidity('')">
@@ -97,52 +107,44 @@
 </html>
 
 <?php
-//Gọi file kết nối cơ sở dữ liệu
-require_once("../sql/connect.php");
-// Kiểm tra nếu người dùng đã ân nút đăng nhập thì mới xử lý
-if (isset($_POST["submit"])) {
-    // lấy thông tin người dùng
-    $username = $_SESSION['username'];
-    $password = $_POST["uPass"];
-    $password1 = $_POST["uPass1"];
-    $password2 = $_POST["uPass2"];
-    //làm sạch thông tin, xóa bỏ các tag html, ký tự đặc biệt 
-    //mà người dùng cố tình thêm vào để tấn công theo phương thức sql injection
-    $password = strip_tags($password);
-    $password = addslashes($password);
-    $password1 = strip_tags($password1);
-    $password1 = addslashes($password1);
-    $password2 = strip_tags($password2);
-    $password2 = addslashes($password2);
-
-    $sql = "SELECT * from users where Accout = '$username' ";
-    $query = mysqli_query($conn, $sql);
-    $num_rows = mysqli_num_rows($query);
-
-    if ($num_rows > 0) {
-        $user = mysqli_fetch_assoc($query);
-        if ($password == $user['Pass']) {
-            if ($password1 != $password2) {
-                echo "Mật khẩu bạn nhập lại chưa đúng";
-            } else {
-                if ($password1 == $password)
-                {
-                    $sql2 = "UPDATE users SET Pass = '$password1' Where Accout = '$username'";
-                    $res2 = mysqli_query($conn, $sql2);
-                    if($res2==true)
-                    {
-                        header('Location: ' . $_SERVER['HTTP_REFERER']);
+    include ('../sql/connect.php');
+    if(isset($_POST["submit"])){
+        $userName = $_POST['uName'];
+        $sql = "SELECT * FROM users WHERE Accout='$userName'";
+        $RESULT = mysqli_query($conn, $sql);
+        if (mysqli_num_rows($RESULT) > 0) {
+            $userPassOld = $_POST['uPass'];
+            $userPassNew = $_POST['uPass1'];
+            $reUserPassNew = $_POST['uPass2'];
+    
+            $mysql = "SELECT Pass FROM users WHERE Accout='$userName'";
+            $resultPass = mysqli_query($conn, $mysql);
+            $userPassNow = mysqli_fetch_row($resultPass);
+            if (strcmp($userPassOld, $userPassNow[0]) == 0) {
+                if (!(empty($userPassNew)) && $userPassNew == $reUserPassNew && $userPassOld != $userPassNew) {
+                    $sql = "UPDATE users SET Pass='$userPassNew' WHERE Accout='$userName'";
+                    if (mysqli_query($conn, $sql)) {
+                        echo '<script type="text/javascript"> alert("Cập nhật thành công");</script>';
+                    } else {
+                        echo '<script type="text/javascript"> alert("Lỗi");</script>'. mysqli_error($conn);
+                        echo '<br></br>';
+                        echo '<a href="../Log/Changepass.php">' . 'Quay Lại' . '</a>';
                     }
-                    else
-                    {
-                        echo "Chưa cập nhật thành công!";
-                    }
+                }else {
+                   
+                    echo '<script type="text/javascript"> alert("Vui lòng nhập đầy đủ và nhập mật khẩu mới trùng nhau và mật khẩu không được trùng với mật khẩu cũ");</script>';
+                    echo '<br></br>';
+                    echo '<a href="../Log/Changepass.php">' . 'Quay Lại' . '</a>';
                 }
-                else echo "Mật khẩu mới trùng mật khẩu cũ";
+            } else {
+                echo '<script type="text/javascript"> alert("Vui lòng nhập đầy đủ và nhập đúng mật khẩu cũ ");</script>';
+                echo '<br></br>';
+                echo '<a href="../Log/Changepass.php">' . 'Quay Lại' . '</a>';
             }
+        } else {
+            echo '<script type="text/javascript"> alert("Vui lòng nhập chính xác tài khoản");</script>';
+            echo '<br></br>';
+            echo '<a href="../Log/Changepass.php">' . 'Quay Lại' . '</a>';
         }
     }
-}
-
-
 ?>
