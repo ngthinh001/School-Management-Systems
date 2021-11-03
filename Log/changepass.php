@@ -133,18 +133,15 @@
                 }else {
                    
                     echo '<script type="text/javascript"> alert("Vui lòng nhập đầy đủ và nhập mật khẩu mới trùng nhau và mật khẩu không được trùng với mật khẩu cũ");</script>';
-                    echo '<br></br>';
-                    echo '<a href="../Log/Changepass.php">' . 'Quay Lại' . '</a>';
+                   
                 }
             } else {
                 echo '<script type="text/javascript"> alert("Vui lòng nhập đầy đủ và nhập đúng mật khẩu cũ ");</script>';
-                echo '<br></br>';
-                echo '<a href="../Log/Changepass.php">' . 'Quay Lại' . '</a>';
+                
             }
         } else {
             echo '<script type="text/javascript"> alert("Vui lòng nhập chính xác tài khoản");</script>';
-            echo '<br></br>';
-            echo '<a href="../Log/Changepass.php">' . 'Quay Lại' . '</a>';
+            
         }
     }
 ?>
