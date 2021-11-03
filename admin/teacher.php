@@ -1,4 +1,4 @@
-<?php include '../partial-font/header.php' ?>
+<?php include '../partial-font/header_admin.php' ?>
 <?php require_once '../config/dbcommand.php' ?>
 <div class="row justify-content-center">
     <div class="col-md-6 text-center mb-5">
@@ -65,4 +65,4 @@
 </div>
 </div>
 
-<?php include '../partial-font/footer.php' ?>
+<?php include '../partial-font/footer_admin.php' ?>

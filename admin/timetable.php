@@ -1,5 +1,5 @@
 <?php require_once '../config/dbcommand.php' ?>
-<?php include '../partial-font/header.php' ?>
+<?php include '../partial-font/header_admin.php' ?>
 
 <style>
     .input-group .form-control {
@@ -75,4 +75,4 @@
 </div>
 </div>
 
-<?php include '../partial-font/footer.php' ?>
+<?php include '../partial-font/footer_admin.php' ?>

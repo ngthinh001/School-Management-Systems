@@ -1,4 +1,4 @@
-<?php include('../partial-font/header.php'); ?>
+<?php include('../partial-font/header_admin.php'); ?>
 
 <div class="cotainer ">
     <div class="row">
@@ -13,7 +13,7 @@
                 </div>
             </a>
         </div>
-        <div class="col-2 md-4 n01 n03"><a href="./class/index.php">
+        <div class="col-2 md-4 n01 n03"><a href="class.php">
                 <div class="box">
                     <div class="icon"><i class="bi bi-bank2"></i></div>
                     <div class="content">
@@ -51,7 +51,7 @@
                     </div>
                 </div>
             </a></div>
-        <div class="col-2 n01"><a href="">
+        <div class="col-2 n01"><a href="timetable.php">
                 <div class="box">
                     <div class="icon"><i class="bi bi-book-fill"></i></div>
                     <div class="content">
@@ -62,16 +62,7 @@
             </a></div>
     </div>
     <div class="row">
-        <div class="col-2 n01 n02"> <a href="">
-                <div class="box">
-                    <div class="icon"><i class="bi bi-envelope-fill"></i></div>
-                    <div class="content">
-                        <br>
-                        <span>Gửi email</span>
-                    </div>
-                </div>
-            </a></div>
-        <div class="col-2 n01"><a href="">
+        <div class="col-2 n01 n02"><a href="chat.php">
                 <div class="box">
                     <div class="icon"><i class="bi bi-chat-dots"></i></div>
                     <div class="content">
@@ -91,5 +82,5 @@
             </a></div>
     </div>
 </div>
-
-<?php include('../partial-font/footer.php'); ?>
+<br>
+<?php include('../partial-font/footer_admin.php'); ?>

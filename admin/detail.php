@@ -1,4 +1,4 @@
-<?php include('../partial-font/header.php'); ?>
+<?php include('../partial-font/header_admin.php'); ?>
 <div class="row"></div>
 <div class="container-fluid " style="background-color: #ecf0f1; border-radius: 30px;">
     <div class="row g-1 p-5" style="margin-top: 20px;">
@@ -34,15 +34,31 @@
                     <tr>
                         <th scope="col">Mã Tài khoản</th>
                         <th scope="col">Họ tên</th>
-                        <th scope="col">Địa chỉ</th>
+<!--                         <th scope="col">Địa chỉ</th> -->
                         <th scope="col">Thao tác</th>
                     </tr>
                 </thead>
+                <?php 
+                    //  session_start();
+                     //kết nối với mysql
+                     include('../sql/connect.php');
+                     $ten = $_SESSION['username'] ;
+                     $id = $_SESSION['id'];
+                     $sql = "SELECT * FROM users WHERE Accout LIKE '%$ten%' AND ID LIKE '%$id%' ";
+                     $result = mysqli_query($conn, $sql);
+                 
+                     if(mysqli_num_rows($result)){
+                     while($row = mysqli_fetch_assoc($result)){
+                         $matk = $row['ID'];  
+                         $hoten = $row['Accout'];
+                         
+                         }}
+
+                ?>
                 <tbody>
                     <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
+                        <td><?php echo $matk; ?></td>
+                        <td><?php echo $hoten; ?></td>
                         <td>
                             <div class="btn-group" role="group" aria-label="Third group">
                                 <button type="button" class="btn " style="color:black" id="formButton">Sửa thông tin</button>
@@ -76,4 +92,4 @@
 
 
 
-    <?php include '../partial-font/footer.php' ?>
+<?php include '../partial-font/footer_admin.php' ?>

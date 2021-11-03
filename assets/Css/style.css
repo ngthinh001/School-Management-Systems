@@ -365,3 +365,24 @@ a {
 
 
 /* /Dashbroad Page */
+
+
+/* /Dashbroad Page */
+
+.end {
+    width: 100%;
+    height: var(--header-height);
+    position: fixed;
+    top: 93%;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    background-color: var(--white-color);
+    transition: .5s
+}
+
+tr.spaceUnder>td {
+    padding-bottom: 5%;
+}
