@@ -19,7 +19,7 @@
             <nav class="nav">
                 <div> <a href="#" class="nav_logo"> <i class="bi bi-stack nav_logo-icon"></i> <span class="nav_logo-name">High School</span> </a>
                     <div class="nav_list">
-                        <a href="../Log/images/img-01.png" class="nav_link active">
+                        <a href="home.php" class="nav_link active">
                             <i class='bi bi-house-door nav_logo-icon'></i>
                             <span class="nav_name">Trang chủ</span> </a>
                         <a href="thong-tinhs.php" class="nav_link">
@@ -36,7 +36,7 @@
                             <span class="nav_name">Danh sách học sinh trong lớp</span> </a>
                         <a href="thong_tin_gvday.php" class="nav_link">
                             <i class='bi bi-menu-button-fill nav_logo-icon'></i>
-                            <span class="nav_name">Thông tin giáo viên chủ nhiệm</span> </a>
+                            <span class="nav_name">Thông tin giáo viên </span> </a>
                         <a href="lichthi.php" class="nav_link">
                             <i class="bi bi-calendar-month nav_logo-icon"></i>
                             <span class="nav_name">Lịch thi</span> </a>
