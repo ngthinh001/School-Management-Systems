@@ -56,7 +56,7 @@ if (!empty($_POST)) {
 
 
 ?>
-<?php include '../partial-font/header.php' ?>
+<?php include '../partial-font/header_admin.php' ?>
 <div class="container-fluid">
     <div class="panel panel-primary">
         <div class="panel-heading">
@@ -87,4 +87,4 @@ if (!empty($_POST)) {
     </div>
 </div>
 
-<?php include '../partial-font/footer.php' ?>
+<?php include '../partial-font/footer_admin.php' ?>
