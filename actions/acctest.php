@@ -38,11 +38,11 @@ if (isset($_POST['btnSubmitTest'])) {
         // update
         $sql = "update thi set Sbd = '$s_sbd', Ngaythi = '$s_ngaythi', Phongthi = '$s_phongthi', Giothi = '$s_giothi' where Mahs = '$s_mahsP' and Mamh = '$s_mamhP'";
     } else
-        $sql = "insert into lichday(Magv, Mamh, Mal, Tiet, Ngay, Hocky, Namhoc) value ('$s_magvP', '$s_mamhP', '$s_malP', '$s_tiet', '$s_ngay', '$s_hocky', '$s_namhoc')";
+        $sql = "insert into thi(Mahs, Mamh, Sbd, Ngaythi, Phongthi, Giothi) value ('$s_mahsP', '$s_mamhP', '$s_sbd', '$s_ngaythi', '$s_phongthi', '$s_giothi')";
 
     try {
         if (execute($sql))
-            echo '<script>location.replace("../admin/schedule.php")</script>';
+            echo '<script>location.replace("../admin/test.php")</script>';
     } catch (Exception $e) {
         echo $e->getMessage();
     }
@@ -59,7 +59,7 @@ if (isset($_POST['btnSubmitTest'])) {
             <form method="post">
                 <div class="form-group">
                     <label>Mã học sinh</label>
-                    <input required="true" type="text" class="form-control" name="Magv" value="<?php echo $id ?>">
+                    <input required="true" type="text" class="form-control" name="Mahs" value="<?php echo $id ?>">
                 </div>
                 <div class="form-group">
                     <label>Mã môn học</label>
@@ -67,19 +67,19 @@ if (isset($_POST['btnSubmitTest'])) {
                 </div>
                 <div class="form-group">
                     <label>Số báo danh</label>
-                    <input required="true" type="text" class="form-control" name="Mal" value="<?php echo $s_sbd ?>">
+                    <input required="true" type="text" class="form-control" name="Sbd" value="<?php echo $s_sbd ?>">
                 </div>
                 <div class="form-group">
                     <label>Ngày thi</label>
-                    <input required="true" type="date" class="form-control" name="Tiet" value="<?php echo $s_ngaythi ?>">
+                    <input required="true" type="date" class="form-control" name="Ngaythi" value="<?php echo $s_ngaythi ?>">
                 </div>
                 <div class="form-group">
                     <label>Phòng thi </label>
-                    <input required="true" type="text" class="form-control" name="Ngay" value="<?php echo $s_phongthi ?>">
+                    <input required="true" type="text" class="form-control" name="Phongthi" value="<?php echo $s_phongthi ?>">
                 </div>
                 <div class="form-group">
                     <label>Giờ thi</label>
-                    <input required="time" type="number" class="form-control" name="Hocky" value="<?php echo $s_giothi ?>">
+                    <input required="time" type="time" class="form-control" name="Giothi" value="<?php echo $s_giothi ?>">
                 </div>                
                 <br>
                 <button class="btn btn-success" type="submit" name="btnSubmitTest">Lưu Thông Tin</button>

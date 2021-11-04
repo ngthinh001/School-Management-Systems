@@ -1,8 +1,8 @@
-<?php session_start();
-if (!isset($_SESSION['username'])) {
-    header("Location: ../Log/login.php");
-}
-?>
+<?php session_start(); 
+  if(!isset($_SESSION['username']))
+  {
+      header("Location: ../Log/login.php");
+  }?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -77,7 +77,7 @@ if (!isset($_SESSION['username'])) {
                     <a href="../admin/schedule.php" class="nav_link">
                         <i class='bi bi-calendar3 nav_logo-icon'></i>
                         <span class="nav_name">QL lịch công tác</span> </a>
-                    <a href="../admin/chat.php" class="nav_link">
+                    <a href="../admin/test.php" class="nav_link">
                         <i class="bi bi-calendar3 nav_logo-icon"></i>
                         <span class="nav_name">QL lịch thi</span> </a>
                     <a href="../admin/chat.php" class="nav_link">

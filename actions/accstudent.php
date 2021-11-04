@@ -42,7 +42,7 @@ if (isset($_POST['btnSubmitStd'])) {
 
     if ($id != '') {
         // update
-        $sql = "update hoc_sinh set Hotengv = '$s_tengv', Ngaysinh = '$s_nsinh', Gioitinh = '$s_gtinh', Diachi = '$s_dchi', Chucvu = '$s_chvu',Sdt = '$s_sdt' where Magv = '$id'";
+        $sql = "update hoc_sinh set Hotenhs = '$s_tenhs', Ngaysinh = '$s_nsinh', Gioitinh = '$s_gtinh', Sdtph = '$s_Sdtph', Mal = '$s_Mal',Hocky = '$s_Hocky',Namhoc = '$s_Namhoc' where Mahs = '$id'";
     } else
         $sql = "insert into hoc_sinh(Mahs, Hotenhs, Ngaysinh, Gioitinh, Sdtph, Mal, Hocky, Namhoc) value ('$s_mahs', '$s_tenhs', '$s_nsinh', '$s_gtinh', '$s_Sdtph', '$s_Mal', '$s_Hocky','$s_Namhoc')";
 
@@ -94,7 +94,7 @@ if (isset($_POST['btnSubmitStd'])) {
                 </div>
                 <div class="form-group">
                     <label>Năm học</label>
-                    <input required="true" type="number" class="form-control" name="Namhoc" value="<?php echo $s_Namhoc ?>">
+                    <input required="true" type="text" class="form-control" name="Namhoc" value="<?php echo $s_Namhoc ?>">
                 </div>
                 <br>
                 <button class="btn btn-success" type="submit" name="btnSubmitStd">Lưu Thông Tin</button>

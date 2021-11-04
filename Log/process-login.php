@@ -24,7 +24,7 @@ if (isset($_POST["submit"])) {
 
         $_SESSION['username'] = $user['Accout'];
         $_SESSION['level'] = $user['Level'];
-        $_SESSION['id'] = $user['ID'];
+        $_SESSION['id'] = $username;
         switch ($user['Level']) {
             case 1:
                 header('Location: ../admin');

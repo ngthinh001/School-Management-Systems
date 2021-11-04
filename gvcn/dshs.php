@@ -7,7 +7,7 @@
     </div>
 </div>
 <br><br>
-<div class="table-responsive" style="padding: 0 5%">
+<div class="table-responsive" style="padding: 0 5%" id="hs_table">
     <table class="table table-striped table-hover">
         <thead>
             <tr>
@@ -49,33 +49,36 @@
         } ?>
     </table>
     <br>
+</div>
+<form id="upload_ds" method="post" enctype="multipart/form-data" style="padding: 0 5%">
     <div class="col-md-4" style="float: left;">
-        <input type="file" name="employee_file" style="margin-top:15px;" />
+        <input type="file" name="book1" style="margin-top:15px;" />
     </div>
     <div class="col-md-5" style="float: left;">
-        <input type="submit" name="capnhatdshs" id="upload" value="Cập nhật Danh sách" style="margin-top:10px;" class="btn btn-success" />
+        <input type="submit" name="upload" id="upload" value="Upload" style="margin-top:10px;" class="btn btn-info" />
     </div>
-</div>
-
+    <div style="clear:both"></div>
+</form>
 <?php include '../partial-font/footer_gv.php' ?>
+
 <script>
     $(document).ready(function() {
-        $('#upload_csv').on("submit", function(e) {
+        $('#upload_ds').on("submit", function(e) {
             e.preventDefault(); //form will not submitted  
             $.ajax({
-                url: "update/import_dshs.php",
+                url: "../actions/import_dshs.php",
                 method: "POST",
                 data: new FormData(this),
                 contentType: false, // The content type used when sending data to the server.  
                 cache: false, // To unable request pages to be cached  
                 processData: false, // To send DOMDocument or non processed data file it is set to false  
-                uccess: function(data) {
+                success: function(data) {
                     if (data == 'Error1') {
                         alert("Invalid File");
                     } else if (data == "Error2") {
                         alert("Please Select File");
                     } else {
-                        $('tbdiem1').html(data);
+                        $('#hs_table').html(data);
                     }
                 }
             })

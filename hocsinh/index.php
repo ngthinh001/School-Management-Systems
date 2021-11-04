@@ -1,4 +1,4 @@
-<?php include('../sql/connect.php') ?>
+<?php include('../sql/connect.php')?>
 <?php include('../partial-font/hearder_hs.php') ?>
 <div class="cotainer ">
     <div class="row">
@@ -47,7 +47,7 @@
                     <div class="icon"><i class="bi bi-people-fill"></i></div>
                     <div class="content">
                         <br>
-                        <span>Điểm của học sinh khác</span>
+                        <span>Điểm của cả lớp</span>
                     </div>
                 </div>
             </a></div>
@@ -91,4 +91,5 @@
             </a></div>
     </div>
 </div>
+<br><br>
 <?php include('../partial-font/footer_hs.php') ?>

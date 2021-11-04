@@ -16,25 +16,11 @@ if (isset($_GET['id'])) {
         $id = '';
     }
 }
-if (!empty($_POST)) {
-
-
-    if (isset($_POST['MaL'])) {
-        $s_mal = $_POST['MaL'];
-    }
-
-    if (isset($_POST['TenL'])) {
-        $s_tenl = $_POST['TenL'];
-    }
-
-    if (isset($_POST['SoHs'])) {
-        $s_sohs = $_POST['SoHs'];
-    }
-
-    if (isset($_POST['Magv'])) {
-        $s_magv = $_POST['Magv'];
-    }
-
+if (isset($_POST['btnSubCl'])) {
+    $s_mal = $_POST['MaL'];
+    $s_tenl = $_POST['TenL'];
+    $s_sohs = $_POST['SoHs'];
+    $s_magv = $_POST['Magv'];
     //chống sql inject
     //Xóa dấu '
     $s_mal = str_replace('\'', '\\\'', $s_mal);
@@ -48,10 +34,10 @@ if (!empty($_POST)) {
     } else
         $sql = "insert into lop(Mal, Ten_l, Sohs, Magv) value ('$s_mal', '$s_tenl', '$s_sohs', '$s_magv')";
 
-    execute($sql);
-    header('Location: ../admin/class.php');
-
-    die();
+    if (execute($sql)) {
+        header('Location: ../admin/class.php');
+    } else
+        die();
 }
 
 
@@ -81,28 +67,10 @@ if (!empty($_POST)) {
                     <input required="true" type="text" class="form-control" name="Magv" value="<?php echo $s_magv ?>">
                 </div>
                 <br>
-                <button class="btn btn-success">Lưu Thông Tin</button>
+                <button class="btn btn-success" type="submit" name="btnSubCl">Lưu Thông Tin</button>
             </form>
         </div>
     </div>
 </div>
-<script type="text/javascript">
-    function confirmDelete(mal) {
-        if (confirm('Are you sure you want to delete this?')) {
-            //Make ajax call
-            $.ajax({
-                url: "delete.php",
-                type: "GET",
-                data: {
-                    id: mal
-                },
-                dataType: "html",
-                success: function() {
-                    alert("It was succesfully deleted!");
-                }
-            });
 
-        }
-    }
-</script>
 <?php include '../partial-font/footer_admin.php' ?>

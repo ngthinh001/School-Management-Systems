@@ -1,11 +1,11 @@
-<?php include '../partial-font/header_gvcn.php' ?>
+<?php include '../partial-font/header_gvcn.php'; echo $_SESSION['level'] ?>
 <br>
 <div class="text-center">
     <div class="container">
         <h1><b>Danh sách điểm của học sinh</b></h1>
         <br><br>
     </div>
-</div>
+</div><br><br>
 <div class="container text-center">
     <form action="diem.php" method="POST" style="float:center">
         <tr>
@@ -76,46 +76,8 @@
                 </table>
             </div>
             <br>
-            <form id="upload_csv" method="post" enctype="multipart/form-data">
-                <div class="col-md-4" style="float: left;">
-                    <input type="file" name="diem" id="diemcalop" style="margin-top:15px;" />
-                </div>
-                <div class="col-md-5" style="float: left;">
-                    <input type="submit" name="capnhatdiem" id="upload" value="Cập nhật Điểm" style="margin-top:10px;" class="btn btn-success" />
-                </div>
-            </form>
             <br>
     <?php }
     }
     ?>
 </form>
-
-<script>
-    $(document).ready(function() {
-        $('#upload').on("submit", function(e) {
-            e.preventDefault(); //form will not submitted  
-            $.ajax({
-                url: "update/import_diem.php",
-                method: "POST",
-                data: new FormData(this),
-                contentType: false, // The content type used when sending data to the server.  
-                cache: false, // To unable request pages to be cached  
-                processData: false, // To send DOMDocument or non processed data file it is set to false  
-                uccess: function(data){  
-                          if(data=='Error1')  
-                          {  
-                               alert("Invalid File");  
-                          }  
-                          else if(data == "Error2")  
-                          {  
-                               alert("Please Select File");  
-                          }  
-                          else  
-                          {  
-                               $('tbdiem').html(data);  
-                          }  
-                     }  
-                })  
-           });  
-      });  
-</script>
