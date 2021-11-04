@@ -48,14 +48,15 @@
                         <td>' . $class['Sohs'] . '</td>
                         <td>' . $class['Magv'] . '</td>                                              
                         <td>
-                            <a href="../actions/acclass.php?id='.$class['Mal'].'" class="close" data-dismiss="alert" aria-label="Close">
+                            <a href="../actions/acclass.php?id=' . $class['Mal'] . '" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true" style="color: green"><i class="fas fa-user-edit"></i></span> 
-                            </a>
-                            <a href="../actions/acclass.php" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true" style="color: red"><i class="fas fa-user-times"></i></span>
-                            </a>                            
+                            </a>' ?>
+                        <a onClick="return confirm('Bạn chắc chắn muốn xóa?');" href="../actions/delete.php?Mal=<?php echo $class['Mal']?>" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true" style="color: red"><i class="fas fa-user-times"></i></span>
+                        </a>
                         </td>
-                         </tr>';
+                        </tr>
+                    <?php
                     }
                     ?>
                 </tbody>

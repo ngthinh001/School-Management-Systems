@@ -11,6 +11,7 @@
         <h2 class="heading-section">Table #02</h2>
     </div> -->
 </div>
+<a href="../actions/accsubject.php"><button class="btn btn-success">Thêm môn học</button></a>
 <div class="row">
     <div class="input-group" style="display:flex;justify-content: end;">
         <div class="form-outline">
@@ -40,12 +41,13 @@
                         <th scope="row">' . $subject['Mamh'] . '</th>
                         <td>' . $subject['Tenmh'] . '</td>                                          
                         <td>
-                            <a href="#" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true"><i class="fa fa-close"></i></span>
-                            </a>
-                        </td>
-                         </tr>';
-                    }
+                        <a href="../actions/accsubject.php?id=' . $subject['Mamh'] . '" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true" style="color: green"><i class="fas fa-user-edit"></i></span> 
+                    </a>' ?>
+                        <a onClick="return confirm('Bạn chắc chắn muốn xóa?');" href="../actions/delete.php?Mamh=<?php echo $subject['Mamh'] ?>" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true" style="color: red"><i class="fas fa-user-times"></i></span>
+                        </a>
+                    <?php }
                     ?>
                 </tbody>
             </table>

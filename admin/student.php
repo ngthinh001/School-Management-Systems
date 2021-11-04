@@ -7,7 +7,7 @@
         <h2 class="heading-section" style="margin-top: 30px;">Danh sách học sinh</h2>
     </div>
 </div>
-
+<a href="../actions/accstudent.php"><button class="btn btn-success">Thêm học sinh</button></a>
 <div class="row">
     <!-- <div class="col-md-6 text-center mb-5">
         <h2 class="heading-section">Table #02</h2>
@@ -55,12 +55,13 @@
                         <td>' . $std['Hocky'] . '</td>
                         <td>' . $std['Namhoc'] . '</td>                        
                         <td>
-                            <a href="#" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true"><i class="fa fa-close"></i></span>
-                            </a>
-                        </td>
-                         </tr>';
-                    }
+                        <a href="../actions/accstudent.php?id=' . $std['Mahs'] . '" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true" style="color: green"><i class="fas fa-user-edit"></i></span> 
+                    </a>' ?>
+                        <a onClick="return confirm('Bạn chắc chắn muốn xóa?');" href="../actions/delete.php?Mahs=<?php echo $std['Mahs'] ?>" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true" style="color: red"><i class="fas fa-user-times"></i></span>
+                        </a>
+                    <?php }
                     ?>
                 </tbody>
             </table>

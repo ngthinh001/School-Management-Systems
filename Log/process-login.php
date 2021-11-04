@@ -15,18 +15,14 @@ if (isset($_POST["submit"])) {
     $password = strip_tags($password);
     $password = addslashes($password);
 
-<<<<<<< HEAD
     $sql = "SELECT * from users where ID = '$username' and Pass = '$password' ";
-=======
-    $sql = "SELECT * from users where Accout = '$username' and Pass = '$password' ";
->>>>>>> 05251f1b54c9d99ca39ac3dd8ca6e3d0719051a2
     $query = mysqli_query($conn, $sql);
     $num_rows = mysqli_num_rows($query);
 
     if ($num_rows > 0) {
         $user = mysqli_fetch_assoc($query);
 
-        $_SESSION['username'] = $username;
+        $_SESSION['username'] = $user['Accout'];
         $_SESSION['level'] = $user['Level'];
         $_SESSION['id'] = $user['ID'];
         switch ($user['Level']) {
@@ -34,15 +30,6 @@ if (isset($_POST["submit"])) {
                 header('Location: ../admin');
                 break;
             case 2:
-<<<<<<< HEAD
-                header('Location: ../gvcn/index.php');
-                break;
-            case 3:
-                header('Location: ../gvbm/index.php');
-                break;
-            case 4:
-                header('Location: ../hocsinh/index.php');
-=======
                 header('Location: ../gvcn');
                 break;
             case 3:
@@ -50,12 +37,11 @@ if (isset($_POST["submit"])) {
                 break;
             case 4:
                 header('Location: ../hocsinh');
->>>>>>> 05251f1b54c9d99ca39ac3dd8ca6e3d0719051a2
                 break;
         }
     } else {  ?>
         <script type="text/javascript">    
-            option = confirm('Mật khẩu hoặc tài khoản bị sai!');
+            confirm('Mật khẩu hoặc tài khoản bị sai!');
             location.replace('../Log/login.php');
         </script>
 <?php

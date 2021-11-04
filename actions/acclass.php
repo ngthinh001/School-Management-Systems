@@ -48,10 +48,10 @@ if (!empty($_POST)) {
     } else
         $sql = "insert into lop(Mal, Ten_l, Sohs, Magv) value ('$s_mal', '$s_tenl', '$s_sohs', '$s_magv')";
 
-    if (execute($sql)) {
-        header('Location: ../admin/class.php');
-    } else
-        die();
+    execute($sql);
+    header('Location: ../admin/class.php');
+
+    die();
 }
 
 
@@ -86,5 +86,23 @@ if (!empty($_POST)) {
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    function confirmDelete(mal) {
+        if (confirm('Are you sure you want to delete this?')) {
+            //Make ajax call
+            $.ajax({
+                url: "delete.php",
+                type: "GET",
+                data: {
+                    id: mal
+                },
+                dataType: "html",
+                success: function() {
+                    alert("It was succesfully deleted!");
+                }
+            });
 
+        }
+    }
+</script>
 <?php include '../partial-font/footer_admin.php' ?>

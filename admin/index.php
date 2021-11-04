@@ -42,7 +42,7 @@
                     </div>
                 </div>
             </a></div>
-        <div class="col-2 n01"><a href="schedule.php">
+        <div class="col-2 n01"><a href="./schedule.php">
                 <div class="box">
                     <div class="icon"><i class="bi bi-briefcase-fill"></i></div>
                     <div class="content">
@@ -51,18 +51,27 @@
                     </div>
                 </div>
             </a></div>
-        <div class="col-2 n01"><a href="timetable.php">
+        <div class="col-2 n01"><a href="./subject.php">
                 <div class="box">
                     <div class="icon"><i class="bi bi-book-fill"></i></div>
                     <div class="content">
                         <br>
-                        <span>Quản lý thời khóa biểu</span>
+                        <span>Quản lý môn học</span>
                     </div>
                 </div>
             </a></div>
     </div>
     <div class="row">
-        <div class="col-2 n01 n02"><a href="chat.php">
+        <div class="col-2 n01 n02"><a href="./test.php">
+                <div class="box">
+                    <div class="icon"><i class="bi bi-book-fill"></i></div>
+                    <div class="content">
+                        <br>
+                        <span>Quản lý lịch thi</span>
+                    </div>
+                </div>
+            </a></div>
+        <div class="col-2 n01"><a href="chat.php">
                 <div class="box">
                     <div class="icon"><i class="bi bi-chat-dots"></i></div>
                     <div class="content">

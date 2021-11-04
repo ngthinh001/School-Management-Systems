@@ -12,7 +12,7 @@
         <h2 class="heading-section" style="margin-top: 30px;">Danh sách lịch công tác</h2>
     </div>
 </div>
-
+<a href="../actions/accshedule.php"><button class="btn btn-success">Thêm lịch dạy</button></a>
 <div class="row">
     <!-- <div class="col-md-6 text-center mb-5">
         <h2 class="heading-section">Table #02</h2>
@@ -60,12 +60,13 @@
                         <td>' . $schedule['Hocky'] . '</td>
                         <td>' . $schedule['Namhoc'] . '</td>                      
                         <td>
-                            <a href="#" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true"><i class="fa fa-close"></i></span>
-                            </a>
-                        </td>
-                         </tr>';
-                    }
+                        <a href="../actions/accshedule.php?id=' . $schedule['Magv'] . '&Mal='.$schedule['Mal'].'&Mamh='.$schedule['Mamh'].'" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true" style="color: green"><i class="fas fa-user-edit"></i></span> 
+                    </a>' ?>
+                        <a onClick="return confirm('Bạn chắc chắn muốn xóa?');" href="../actions/delete.php?Magvld=<?php echo $schedule['Magv'] ?>&Mamhld=<?php echo $schedule['Mamh'] ?>&Malld=<?php echo $schedule['Mal'] ?>" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true" style="color: red"><i class="fas fa-user-times"></i></span>
+                        </a>
+                    <?php }
                     ?>
                 </tbody>
             </table>

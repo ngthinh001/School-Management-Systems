@@ -5,14 +5,13 @@
         <h2 class="heading-section" style="margin-top: 30px;">Danh sách lịch thi</h2>
     </div>
 </div>
-
+<a href="../actions/acctest.php"><button class="btn btn-success">Thêm lịch</button></a>
 <div class="row">
     <!-- <div class="col-md-6 text-center mb-5">
         <h2 class="heading-section">Table #02</h2>
     </div> -->
 </div>
 <div class="row">
-    <button>Thêm lớp</button>
     <div class="input-group" style="display:flex;justify-content: end;">
         <div class="form-outline">
             <input id="search-focus" type="search" id="form1" class="form-control" />
@@ -49,12 +48,13 @@
                         <td>' . $test['Phongthi'] . '</td>
                         <td>' . $test['Giothi'] . '</td>                   
                         <td>
-                            <a href="#" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true"><i class="fa fa-close"></i></span>
-                            </a>
-                        </td>
-                         </tr>';
-                    }
+                        <a href="../actions/acctest.php?id=' . $test['Mahs'] . '&Mamht=' . $test['Mamh'].'" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true" style="color: green"><i class="fas fa-user-edit"></i></span> 
+                    </a>' ?>
+                        <a onClick="return confirm('Bạn chắc chắn muốn xóa?');" href="../actions/delete.php?Mahst=<?php echo $test['Mahs'] ?>&Mamht=<?php echo $test['Mamh'] ?>" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true" style="color: red"><i class="fas fa-user-times"></i></span>
+                        </a>
+                    <?php }
                     ?>
                 </tbody>
             </table>
@@ -64,4 +64,3 @@
 </div>
 
 <?php include '../partial-font/footer_admin.php' ?>
-

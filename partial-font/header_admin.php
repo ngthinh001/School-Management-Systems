@@ -1,4 +1,8 @@
-<?php session_start()?>
+<?php session_start();
+if (!isset($_SESSION['username'])) {
+    header("Location: ../Log/login.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -67,12 +71,15 @@
                     <a href="../admin/student.php" class="nav_link">
                         <i class='bi bi-menu-button nav_logo-icon'></i>
                         <span class="nav_name">QL học sinh</span> </a>
+                    <a href="../admin/subject.php" class="nav_link">
+                        <i class='bi bi-calendar3 nav_logo-icon'></i>
+                        <span class="nav_name">QL môn học</span> </a>
                     <a href="../admin/schedule.php" class="nav_link">
                         <i class='bi bi-calendar3 nav_logo-icon'></i>
                         <span class="nav_name">QL lịch công tác</span> </a>
-                    <a href="../admin/timetable.php" class="nav_link">
-                        <i class='bi bi-calendar3 nav_logo-icon'></i>
-                        <span class="nav_name">QL thời khóa biểu</span> </a>
+                    <a href="../admin/chat.php" class="nav_link">
+                        <i class="bi bi-calendar3 nav_logo-icon"></i>
+                        <span class="nav_name">QL lịch thi</span> </a>
                     <a href="../admin/chat.php" class="nav_link">
                         <i class="bi bi-messenger nav_logo-icon"></i>
                         <span class="nav_name">Gửi thông báo</span> </a>

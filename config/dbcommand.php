@@ -5,13 +5,25 @@ require_once('config.php');
 function execute($sql)
 {
     //CON
-    $conn = mysqli_connect(HOST, USERNAME, PASSWORD, DATABASE);
 
+    // $conn = mysqli_connect(HOST, USERNAME, PASSWORD, DATABASE);
+    // mysqli_set_charset($conn, 'UTF8');
     //SQL
-    $e_check = mysqli_query($conn, $sql);
+    // $e_check = mysqli_query($dbh, $sql);
 
+    $e_check = '';
+    try {
+        $conn = new PDO("mysql:host=" . HOST . ";dbname=" . DATABASE . ";charset=utf8" . "", USERNAME, PASSWORD);
+        // set the PDO error mode to exception
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $e_check = $conn->query($sql);
+    } catch (PDOException $e) {
+        echo "Connection failed: " . $e->getMessage();
+    }
     //CLOSE
-    mysqli_close($conn);
+    // mysqli_close($conn);
+
+    $conn = NULL;
     return $e_check;
 }
 
@@ -20,7 +32,6 @@ function getListOfObject($sql)
 {
     $conn = mysqli_connect(HOST, USERNAME, PASSWORD, DATABASE);
     mysqli_set_charset($conn, 'UTF8');
-    // mysqli_set_charset($conn, 'UTF8');
     //SQL
     $resultSet = mysqli_query($conn, $sql);
     //khai bao mang 
