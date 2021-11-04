@@ -18,9 +18,3 @@
 - <a href="https://www.php.net/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/2560px-PHP-logo.svg.png" height=25, width=25 />&nbsp;&nbsp;Php</a> 
 - <a href="https://www.mysql.com//"><img src="https://download.logo.wine/logo/MySQL/MySQL-Logo.wine.png" height=25, width=25 />&nbsp;&nbsp;Mysql</a> 
 
-<<<<<<< HEAD
-=======
-- <a href="https://jquery.com/"><img src="https://img.icons8.com/ios-filled/48/000000/jquery.png" height=25, width=25 />&nbsp;&nbsp;Jquery</a> 
-- <a href="https://www.javascript.com/"><img src="https://banner2.cleanpng.com/20180720/pjj/kisspng-javascript-logo-html-clip-art-javascript-logo-5b5188b16dbcd8.5939232615320700654495.jpg" height=25, width=25 />&nbsp;&nbsp;JS</a> 
-
-=======
