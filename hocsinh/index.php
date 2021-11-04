@@ -1,4 +1,4 @@
-<?php include('../sql/connect.php'); session_start() ?>
+<?php include('../sql/connect.php')?>
 <?php include('../partial-font/hearder_hs.php') ?>
 <div class="cotainer ">
     <div class="row">

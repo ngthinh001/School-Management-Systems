@@ -30,12 +30,8 @@ if ($num_rows > 0) {
         } else {
             $sql2 = "UPDATE users SET Pass = '$password1' Where Accout = '$username'";
             $res2 = mysqli_query($conn, $sql2);
-            if ($res2 == true) {?>
-                <script>
-      function quay_lai_trang_truoc(){
-          history.back();
-      }
-  </script><?php
+            if ($res2 == true) {
+                header('Location: login.php');
             } else {
                 echo '<script type="text/javascript"> alert("Chưa cập nhật thành công!");</script>';
             }

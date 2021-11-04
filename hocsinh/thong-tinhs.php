@@ -1,5 +1,13 @@
+<?php include('../partial-font/hearder_hs.php'); ?>
+<br>
+<div class="text-center">
+    <div class="container">
+        <h1><b>Thông tin  học sinh</b></h1>
+        <br><br>
+    </div>
+</div>
+<br>
 <?php
-    session_start();
     //kết nối với mysql
     include('../sql/connect.php');
     $ten = $_SESSION['username'] ;
@@ -19,17 +27,7 @@
        $sdtph = $row['Sdtph'];
         }
 }
-
 ?>
-<?php include('../partial-font/hearder_hs.php'); ?>
-<br>
-<div class="text-center">
-    <div class="container">
-        <h1><b>Thông tin  học sinh</b></h1>
-        <br><br>
-    </div>
-</div>
-<br>
 <main>
     <div class="container">
         <form >
