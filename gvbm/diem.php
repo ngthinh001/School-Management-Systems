@@ -1,4 +1,3 @@
-<?php session_start() ?>
 <?php include '../partial-font/header_gvbm.php' ?>
 <br>
 <div class="text-center">
@@ -71,13 +70,6 @@
                         <?php
                         } ?>
                     </table>
-                </div>
-                <br>
-                <div class="col-md-4" style="float: left;">
-                    <input type="file" name="employee_file" style="margin-top:15px;" />
-                </div>
-                <div class="col-md-5" style="float: left;">
-                    <input type="submit" name="capnhatdiem" id="upload" value="Cập nhật Điểm" style="margin-top:10px;" class="btn btn-success" />
                 </div>
                 <br>
     <?php }

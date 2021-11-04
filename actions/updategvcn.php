@@ -2,11 +2,9 @@
 <br>
 <div class="text-center">
     <div class="container">
-        <h1><b>Thông tin chi tiết của giáo viên</b></h1>
-        <br><br>
+        <h1><b>Cập nhật hông tin của giáo viên</b></h1>
     </div>
-</div>
-<br><br>
+</div><br><br>
 <?php
 if (isset($_SESSION['id'])) {
     $id = $_SESSION['id'];
@@ -20,46 +18,49 @@ if (isset($_SESSION['id'])) {
 } else echo 'Not found';
 ?>
 <center>
-    <form action="../gvbm/thongtin.php" method="POST">
+    <form action="process-updategvcn.php" method="POST">
         <table>
             <tr class="spaceUnder">
+                <td><i class="bi bi-person-circle"></i>&nbsp;&nbsp; Mã giáo viên:</td>
+                <td> <input type="text" name="magv" id ="magv" value="<?php echo $row['Magv']; ?>"></td>
+            </tr>
+            <tr class="spaceUnder">
                 <td><i class="bi bi-person-circle"></i>&nbsp;&nbsp; Họ và tên:</td>
-                <td> <input type="text" name="tengv" value="<?php echo $row['Hotengv']; ?>"></td>
+                <td> <input type="text" name="tengv" id="tengv" value="<?php echo $row['Hotengv']; ?>"></td>
             </tr>
             <tr class="spaceUnder">
                 <td><i class="bi bi-telephone"></i>&nbsp;&nbsp; Số điện thoại:</td>
-                <td><input type="text" name="sdt" value="<?php echo $row['Sdt']; ?>"></td>
+                <td><input type="text" name="sdt" id="sdt" value="<?php echo $row['Sdt']; ?>"></td>
             </tr>
             <tr class="spaceUnder">
                 <td><i class="bi bi-calendar-week"></i>&nbsp;&nbsp;Ngày sinh: </td>
-                <td> <input type="date" name="ngaysinh" value="<?php echo $row['Ngaysinh']; ?>"></td>
+                <td> <input type="date" name="ngaysinh"  id="ngaysinh" value="<?php echo $row['Ngaysinh']; ?>"></td>
             </tr>
             <tr class="spaceUnder">
                 <td><i class="bi bi-person-fill"></i>&nbsp;&nbsp;Giới Tính:</td>
-                <td><input type="text" name="diachi" value="<?php echo $row['Gioitinh']; ?>"></td>
+                <td><input type="text" name="gioitinh" id="gioitinh" value="<?php echo $row['Gioitinh']; ?>"></td>
             </tr>
             <tr class="spaceUnder">
                 <td><i class="bi bi-house"></i>&nbsp;&nbsp;Địa chỉ:</td>
-                <td><input type="text" name="diachi" value="<?php echo $row['Diachi']; ?>"></td>
+                <td><input type="text" name="diachi" id="diachi" value="<?php echo $row['Diachi']; ?>"></td>
             </tr>
             <tr class="spaceUnder">
                 <td><i class="bi bi-person-fill"></i>&nbsp;&nbsp;Chức vụ:</td>
-                <td><input type="text" name="diachi" value="<?php echo $row['Chucvu']; ?>"></td>
+                <td><input type="text" name="chucvu" id="chucvu" value="<?php echo $row['Chucvu']; ?>"></td>
             </tr>
             <tr class="spaceUnder">
                 <td><i class="bi bi-person-fill"></i>&nbsp;&nbsp;Lớp chủ nhiệm:</td>
-                <td><input type="text" name="diachi" value="<?php echo $row['Ten_l']; ?>"></td>
+                <td><input type="text" name="lopcn" id="lopcn" value="<?php echo $row['Ten_l']; ?>"></td>
             </tr>
             <tr class="spaceUnder">
                 <td> <i class="bi bi-journal-minus"></i>&nbsp;&nbsp;Môn dạy:</td>
-                <td><input type="text" name="mon" value="<?php echo $row['Tenmh']; ?>"></td>
+                <td><input type="text" name="mon" id="mon" value="<?php echo $row['Tenmh']; ?>"></td>
             </tr>
 
         </table>
-        <br> <br>
-        <div>
-            <a href="../actions/updategvcn.php" class="btn btn-success">Cập nhật thông tin</a>
-        </div>
+        
+        
+            <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </center>
 <?php include '../partial-font/footer_gv.php' ?>

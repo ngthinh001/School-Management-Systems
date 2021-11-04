@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <?php include '../partial-font/header_gvbm.php' ?>
 <br><br><br>
 <div class="cotainer ">
@@ -54,5 +53,5 @@
             </a></div>
     </div>
 </div>
-
+<br>
 <?php include '../partial-font/footer_gv.php' ?>

@@ -15,16 +15,16 @@ if (isset($_POST["submit"])) {
     $password = strip_tags($password);
     $password = addslashes($password);
 
-    $sql = "SELECT * from users where Accout = '$username' and Pass = '$password' ";
+    $sql = "SELECT * from users where ID = '$username' and Pass = '$password' ";
     $query = mysqli_query($conn, $sql);
     $num_rows = mysqli_num_rows($query);
 
     if ($num_rows > 0) {
         $user = mysqli_fetch_assoc($query);
 
-        $_SESSION['username'] = $username;
+        $_SESSION['username'] = $user['Accout'];
         $_SESSION['level'] = $user['Level'];
-        $_SESSION['id'] = $user['ID'];
+        $_SESSION['id'] = $username;
         switch ($user['Level']) {
             case 1:
                 header('Location: ../admin');

@@ -1,4 +1,4 @@
-<?php include '../partial-font/hearder_hs.php' ?>
+<?php include '../partial-font/hearder_hs.php'; session_start() ?>
 <?php include('../sql/connect.php') ?>
 <head>
   <meta charset="UTF-8">
