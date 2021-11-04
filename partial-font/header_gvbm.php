@@ -1,3 +1,8 @@
+<?php session_start(); 
+  if(!isset($_SESSION['username']))
+  {
+      header("Location: ../Log/login.php");
+  }?>
 <?php include '../sql/connect.php' ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,19 +24,18 @@
     <header class="header" id="header">
         <div class="header_toggle"> <i class='bi bi-list' id="header-toggle"></i> </div>
         <div class="header_img"> <img src="https://w7.pngwing.com/pngs/518/320/png-transparent-computer-icons-mobile-app-development-android-my-account-icon-blue-text-logo.png" alt="avatar"> </div>
-    </header>
 
-    <div class="action">
-        <div class="menu" id="image">
-            <h3><?php echo $_SESSION['username'] ?><br><span>Giáo viên bộ môn</span> </h3>
-            <ul>
-                <il><i class="bi bi-person-lines-fill"></i>&nbsp;&nbsp;<a class="menu_icon" href="../gvbm/thongtin.php">Hồ sơ <br></a></il>
-                <il><i class="fas fa-unlock-alt"></i>&nbsp;&nbsp;<a class="menu_icon" href="../Log/changepass.php">Đổi mật khẩu</a><br></il>
-                <il><i class="bi bi-box-arrow-in-right"></i>&nbsp;&nbsp;<a class="menu_icon" href="../Log/logout.php">Đăng xuất</a></il>
-            </ul>
+        <div class="action">
+            <div class="menu" id="image">
+                <h3><?php echo $_SESSION['username'] ?><br><span>Giáo viên bộ môn</span> </h3>
+                <ul>
+                    <il><i class="bi bi-person-lines-fill"></i>&nbsp;&nbsp;<a class="menu_icon" href="../gvbm/thongtin.php">Hồ sơ <br></a></il>
+                    <il><i class="fas fa-unlock-alt"></i>&nbsp;&nbsp;<a class="menu_icon" href="../Log/changepass.php">Đổi mật khẩu</a><br></il>
+                    <il><i class="bi bi-box-arrow-in-right"></i>&nbsp;&nbsp;<a class="menu_icon" href="../Log/logout.php">Đăng xuất</a></il>
+                </ul>
+            </div>
         </div>
-    </div>
-
+    </header>
     <div class="l-navbar" id="nav-bar">
         <nav class="nav">
             <div> <a href="#" class="nav_logo"> <i class="bi bi-stack nav_logo-icon"></i> <span class="nav_logo-name">High School</span> </a>

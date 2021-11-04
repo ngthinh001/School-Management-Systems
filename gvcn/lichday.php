@@ -175,12 +175,6 @@
 
         </table>
     </div>
-    <div class="col-md-4" style="float: left;">
-    <input type="file" name="employee_file" style="margin-top:15px;" />
-</div>
-<div class="col-md-5" style="float: left;">
-    <input type="submit" name="capnhatlich" id="upload" value="Cập nhật lich" style="margin-top:10px;" class="btn btn-success" />
-</div>
 </form>
 <br>
 
