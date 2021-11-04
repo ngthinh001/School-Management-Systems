@@ -3,7 +3,7 @@
 ### Mã nhóm: 22
 ### Các thành viên tham gia:
 1. [Nguyễn Thu Phương](https://github.com/NguyenMam)
-2. [Nguyễn Đức Thịnh](https://github.com/ngthinh001) (nhóm trưởng)
+2. [Nguyễn Đức Thịnh](https://github.com/ngthinh001) 
 3. [Đỗ Tuyết Nguyệt](https://github.com/2612Donguyet)
 ### Nghiệp vụ hệ thống:
 | User |Features| Operations <br />|
